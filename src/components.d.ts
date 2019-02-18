@@ -20,18 +20,63 @@ export namespace Components {
   }
 
   interface EvbButton {
+    /**
+    * Whether or not the button is disabled
+    */
     'disabled': boolean;
+    /**
+    * Invert the coloring of the button
+    */
     'ghost': any;
+    /**
+    * The target of the anchor tag
+    */
     'href'?: string;
+    /**
+    * Extra rounded colors
+    */
+    'pill': any;
+    /**
+    * The type of the button, leave empty in case of a link
+    */
     'type'?: 'submit' | 'button' | 'reset';
   }
   interface EvbButtonAttributes extends StencilHTMLAttributes {
+    /**
+    * Whether or not the button is disabled
+    */
     'disabled'?: boolean;
+    /**
+    * Invert the coloring of the button
+    */
     'ghost'?: any;
+    /**
+    * The target of the anchor tag
+    */
     'href'?: string;
+    /**
+    * Blur event
+    */
     'onEvbBlur'?: (event: CustomEvent<void>) => void;
+    /**
+    * Focus event
+    */
     'onEvbFocus'?: (event: CustomEvent<void>) => void;
+    /**
+    * Extra rounded colors
+    */
+    'pill'?: any;
+    /**
+    * The type of the button, leave empty in case of a link
+    */
     'type'?: 'submit' | 'button' | 'reset';
+  }
+
+  interface EvbHeader {
+    'heading': number | string;
+  }
+  interface EvbHeaderAttributes extends StencilHTMLAttributes {
+    'heading': number | string;
   }
 
   interface EvbCollection {}
@@ -42,12 +87,14 @@ declare global {
   interface StencilElementInterfaces {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
+    'EvbHeader': Components.EvbHeader;
     'EvbCollection': Components.EvbCollection;
   }
 
   interface StencilIntrinsicElements {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
+    'evb-header': Components.EvbHeaderAttributes;
     'evb-collection': Components.EvbCollectionAttributes;
   }
 
@@ -64,6 +111,12 @@ declare global {
     new (): HTMLEvbButtonElement;
   };
 
+  interface HTMLEvbHeaderElement extends Components.EvbHeader, HTMLStencilElement {}
+  var HTMLEvbHeaderElement: {
+    prototype: HTMLEvbHeaderElement;
+    new (): HTMLEvbHeaderElement;
+  };
+
   interface HTMLEvbCollectionElement extends Components.EvbCollection, HTMLStencilElement {}
   var HTMLEvbCollectionElement: {
     prototype: HTMLEvbCollectionElement;
@@ -73,12 +126,14 @@ declare global {
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
+    'evb-header': HTMLEvbHeaderElement
     'evb-collection': HTMLEvbCollectionElement
   }
 
   interface ElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
+    'evb-header': HTMLEvbHeaderElement;
     'evb-collection': HTMLEvbCollectionElement;
   }
 

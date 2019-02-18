@@ -13,14 +13,18 @@ button, a {
   font-weight: 500;
   line-height: 1.5;
   padding: calc(.5rem - 1px) calc(1rem - 1px); /* minus 1px to compensate for the border */
+  transition: all .1s ease-in;
+}
+button:hover, a:hover {
+  transition: all .2s ease-in;
 }
 
 button {
   background-color: #677bd5;
-  border-radius: 20px;
 }
 button:hover {
   background-color: #3a4da5;
+
 }
 button[disabled] {
   opacity: .6;
@@ -34,6 +38,9 @@ button.ghost {
 button.ghost:hover {
   color: #fff;
   background-color: #3a4da5;
+}
+button.pill {
+  border-radius: 2rem;
 }
 
 a {

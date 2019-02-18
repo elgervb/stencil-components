@@ -11,25 +11,36 @@ import { Component, Prop, EventEmitter, Event } from "@stencil/core";
 })
 export class EvbButton {
 
+  /** The type of the button, leave empty in case of a link */
   @Prop() type?: 'submit' | 'button' | 'reset' = 'button';
+  /** The target of the anchor tag */
   @Prop() href?: string;
-
+  /** Invert the coloring of the button */
   @Prop() ghost: any = false;
+  /** Extra rounded colors */
+  @Prop() pill: any = false;
 
+  /** Whether or not the button is disabled*/
   @Prop({ reflectToAttr: true }) disabled = false;
 
+  /** Focus event */
   @Event() evbFocus!: EventEmitter<void>;
+  /** Blur event */
   @Event() evbBlur!: EventEmitter<void>;
 
   private onBlur = () => this.evbBlur.emit();
   private onFocus = () => this.evbFocus.emit();
 
+  /**
+   * Renders the components
+   */
   render() {
     const TagType = this.href === undefined ? 'button' : 'a' as any;
     const attrs = (TagType === 'button') ? { type: this.type } : { href: this.href };
 
     const classes = [];
     this.ghost ? classes.push('ghost') : '';
+    this.pill ? classes.push('pill') : '';
 
     return (
       <TagType
