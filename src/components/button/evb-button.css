@@ -20,10 +20,10 @@ button:hover, a:hover {
 }
 
 button {
-  background-color: #677bd5;
+  background-color: var(--evb-primary-color);
 }
 button:hover {
-  background-color: #3a4da5;
+  background-color: var(--evb-primary-color-darker);
 
 }
 button[disabled] {
@@ -32,12 +32,12 @@ button[disabled] {
 
 button.ghost {
   background-color: transparent;
-  color: #677bd5;
+  color: var(--evb-primary-color);
   border-color: currentColor;
 }
 button.ghost:hover {
   color: #fff;
-  background-color: #3a4da5;
+  background-color: var(--evb-primary-color-darker);
 }
 button.pill {
   border-radius: 2rem;

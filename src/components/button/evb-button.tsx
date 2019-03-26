@@ -45,7 +45,7 @@ export class EvbButton {
     return (
       <TagType
         {...attrs}
-        className={classes.join(', ')}
+        className={classes.join(' ')}
         disabled={this.disabled}
         onFocus={this.onFocus}
         onBlur={this.onBlur}>

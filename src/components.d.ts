@@ -72,6 +72,13 @@ export namespace Components {
     'type'?: 'submit' | 'button' | 'reset';
   }
 
+  interface EvbFormcontrol {
+    'name': string;
+  }
+  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {
+    'name'?: string;
+  }
+
   interface EvbHeader {
     'heading': number | string;
   }
@@ -87,6 +94,7 @@ declare global {
   interface StencilElementInterfaces {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
+    'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
     'EvbCollection': Components.EvbCollection;
   }
@@ -94,6 +102,7 @@ declare global {
   interface StencilIntrinsicElements {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
+    'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
     'evb-collection': Components.EvbCollectionAttributes;
   }
@@ -111,6 +120,12 @@ declare global {
     new (): HTMLEvbButtonElement;
   };
 
+  interface HTMLEvbFormcontrolElement extends Components.EvbFormcontrol, HTMLStencilElement {}
+  var HTMLEvbFormcontrolElement: {
+    prototype: HTMLEvbFormcontrolElement;
+    new (): HTMLEvbFormcontrolElement;
+  };
+
   interface HTMLEvbHeaderElement extends Components.EvbHeader, HTMLStencilElement {}
   var HTMLEvbHeaderElement: {
     prototype: HTMLEvbHeaderElement;
@@ -126,6 +141,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
+    'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
     'evb-collection': HTMLEvbCollectionElement
   }
@@ -133,6 +149,7 @@ declare global {
   interface ElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
+    'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;
     'evb-collection': HTMLEvbCollectionElement;
   }

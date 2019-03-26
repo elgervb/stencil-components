@@ -23,6 +23,7 @@ export class Mycollection {
           <evb-button href="#" onClick={ev => this.btnClick(ev)}>link</evb-button>
           <evb-button ghost="true" onClick={ev => this.btnClick(ev)}>ghost</evb-button>
           <evb-button pill="true" onClick={ev => this.btnClick(ev)}>pill</evb-button>
+          <evb-button pill="true" ghost="true" onClick={ev => this.btnClick(ev)}>ghost pill</evb-button>
           <evb-button disabled onClick={ev => this.btnClick(ev)}>disabled</evb-button>
         </evb-button-bar>
         <evb-header heading="2">Buttonbar: justify <em>left, right or center</em></evb-header>
@@ -34,6 +35,14 @@ export class Mycollection {
           <evb-button>cancel</evb-button>
           <evb-button>save</evb-button>
         </evb-button-bar>
+
+        <evb-header heading="2">Forms</evb-header>
+        <evb-formcontrol>
+          <input type="text" placeholder="Enter a value"/>
+        </evb-formcontrol>
+        <evb-formcontrol>
+          <textarea placeholder="Enter a value"/>
+        </evb-formcontrol>
       </section>
     )
   }
