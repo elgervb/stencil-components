@@ -1,0 +1,28 @@
+
+:host {
+  color: var(--evb-text-color);
+  display: block;
+  background-color: var(--evb-background-light);
+  position: relative;
+}
+
+:host(.progress--with-text::after) {
+  content: attr(data-progress) '%';
+  display: block;
+  font-size: 1em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+:host(.progress--gt-50) {
+  color: var(--evb-text-color-invert);
+}
+
+.progress__inner {
+  background-color: var(--evb-primary-color);
+  height: 100%;
+  transition: width .1s ease-out;
+  width: 0;
+}

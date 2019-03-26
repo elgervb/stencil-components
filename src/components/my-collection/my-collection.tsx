@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, ComponentWillLoad, State, } from '@stencil/core';
 
 @Component({
   tag: 'evb-collection',
@@ -6,16 +6,27 @@ import { Component } from '@stencil/core';
   shadow: false,
   scoped: true
 })
-export class Mycollection {
+export class Mycollection implements ComponentWillLoad {
+
+  @State()
+  progress = 10;
 
   btnClick(ev: UIEvent) {
     console.log('Clicked', ev.target);
+  }
+
+  componentWillLoad() {
+    setInterval(() => this.progress = Math.floor(Math.random() * 100) + 1, 2500);
   }
 
   render() {
     return (
       <section>
         <evb-header heading="1">Evb Components</evb-header>
+
+        <evb-header heading="2">Progress bar</evb-header>
+        <evb-progressbar progress={this.progress} text="true"></evb-progressbar>
+
         <evb-header heading="2">Buttonbar and buttons</evb-header>
         <evb-button-bar>
           <evb-button onClick={ev => this.btnClick(ev)}>button</evb-button>
@@ -26,6 +37,7 @@ export class Mycollection {
           <evb-button pill="true" ghost="true" onClick={ev => this.btnClick(ev)}>ghost pill</evb-button>
           <evb-button disabled onClick={ev => this.btnClick(ev)}>disabled</evb-button>
         </evb-button-bar>
+
         <evb-header heading="2">Buttonbar: justify <em>left, right or center</em></evb-header>
         <evb-button-bar justify="center">
           <evb-button>cancel</evb-button>
@@ -38,10 +50,10 @@ export class Mycollection {
 
         <evb-header heading="2">Forms</evb-header>
         <evb-formcontrol>
-          <input type="text" placeholder="Enter a value"/>
+          <input type="text" placeholder="Enter a value" />
         </evb-formcontrol>
         <evb-formcontrol>
-          <textarea placeholder="Enter a value"/>
+          <textarea placeholder="Enter a value" />
         </evb-formcontrol>
       </section>
     )

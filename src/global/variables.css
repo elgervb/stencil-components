@@ -2,4 +2,8 @@
   --evb-primary-color: #677bd5;
   --evb-primary-color-darker: #3a4da5;
   --evb-border-light: #dbdbdb;
+  --evb-background-light: #dbdbdb;
+
+  --evb-text-color: #000;
+  --evb-text-color-invert: #fff;
 }

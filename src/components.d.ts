@@ -88,6 +88,35 @@ export namespace Components {
 
   interface EvbCollection {}
   interface EvbCollectionAttributes extends StencilHTMLAttributes {}
+
+  interface EvbProgressbar {
+    /**
+    * The height of the bar in pixels
+    */
+    'height': number;
+    /**
+    * Progress percentage
+    */
+    'progress': number | string;
+    /**
+    * Show the progress as text in the progress bar
+    */
+    'text': boolean | 'true' | 'false';
+  }
+  interface EvbProgressbarAttributes extends StencilHTMLAttributes {
+    /**
+    * The height of the bar in pixels
+    */
+    'height'?: number;
+    /**
+    * Progress percentage
+    */
+    'progress'?: number | string;
+    /**
+    * Show the progress as text in the progress bar
+    */
+    'text'?: boolean | 'true' | 'false';
+  }
 }
 
 declare global {
@@ -97,6 +126,7 @@ declare global {
     'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
     'EvbCollection': Components.EvbCollection;
+    'EvbProgressbar': Components.EvbProgressbar;
   }
 
   interface StencilIntrinsicElements {
@@ -105,6 +135,7 @@ declare global {
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
     'evb-collection': Components.EvbCollectionAttributes;
+    'evb-progressbar': Components.EvbProgressbarAttributes;
   }
 
 
@@ -138,12 +169,19 @@ declare global {
     new (): HTMLEvbCollectionElement;
   };
 
+  interface HTMLEvbProgressbarElement extends Components.EvbProgressbar, HTMLStencilElement {}
+  var HTMLEvbProgressbarElement: {
+    prototype: HTMLEvbProgressbarElement;
+    new (): HTMLEvbProgressbarElement;
+  };
+
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
     'evb-collection': HTMLEvbCollectionElement
+    'evb-progressbar': HTMLEvbProgressbarElement
   }
 
   interface ElementTagNameMap {
@@ -152,6 +190,7 @@ declare global {
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;
     'evb-collection': HTMLEvbCollectionElement;
+    'evb-progressbar': HTMLEvbProgressbarElement;
   }
 
 
