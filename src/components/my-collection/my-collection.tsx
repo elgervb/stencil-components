@@ -25,16 +25,16 @@ export class Mycollection implements ComponentWillLoad {
         <evb-header heading="1">Evb Components</evb-header>
 
         <evb-header heading="2">Progress bar</evb-header>
-        <evb-progressbar progress={this.progress} text="true"></evb-progressbar>
+        <evb-progressbar progress={this.progress} text={true}></evb-progressbar>
 
         <evb-header heading="2">Buttonbar and buttons</evb-header>
         <evb-button-bar>
           <evb-button onClick={ev => this.btnClick(ev)}>button</evb-button>
           <evb-button type="submit" onClick={ev => this.btnClick(ev)}>submit</evb-button>
           <evb-button href="#" onClick={ev => this.btnClick(ev)}>link</evb-button>
-          <evb-button ghost="true" onClick={ev => this.btnClick(ev)}>ghost</evb-button>
-          <evb-button pill="true" onClick={ev => this.btnClick(ev)}>pill</evb-button>
-          <evb-button pill="true" ghost="true" onClick={ev => this.btnClick(ev)}>ghost pill</evb-button>
+          <evb-button ghost={true} onClick={ev => this.btnClick(ev)}>ghost</evb-button>
+          <evb-button pill={true} onClick={ev => this.btnClick(ev)}>pill</evb-button>
+          <evb-button pill={true} ghost={true} onClick={ev => this.btnClick(ev)}>ghost pill</evb-button>
           <evb-button disabled onClick={ev => this.btnClick(ev)}>disabled</evb-button>
         </evb-button-bar>
 

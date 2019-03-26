@@ -16,9 +16,9 @@ export class EvbButton {
   /** The target of the anchor tag */
   @Prop() href?: string;
   /** Invert the coloring of the button */
-  @Prop() ghost: any = false;
+  @Prop() ghost = false;
   /** Extra rounded colors */
-  @Prop() pill: any = false;
+  @Prop() pill = false;
 
   /** Whether or not the button is disabled*/
   @Prop({ reflectToAttr: true }) disabled = false;
@@ -49,7 +49,7 @@ export class EvbButton {
         disabled={this.disabled}
         onFocus={this.onFocus}
         onBlur={this.onBlur}>
-        <slot/>
+        <slot />
       </TagType>
     );
   }

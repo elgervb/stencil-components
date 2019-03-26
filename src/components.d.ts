@@ -27,7 +27,7 @@ export namespace Components {
     /**
     * Invert the coloring of the button
     */
-    'ghost': any;
+    'ghost': boolean;
     /**
     * The target of the anchor tag
     */
@@ -35,7 +35,7 @@ export namespace Components {
     /**
     * Extra rounded colors
     */
-    'pill': any;
+    'pill': boolean;
     /**
     * The type of the button, leave empty in case of a link
     */
@@ -49,7 +49,7 @@ export namespace Components {
     /**
     * Invert the coloring of the button
     */
-    'ghost'?: any;
+    'ghost'?: boolean;
     /**
     * The target of the anchor tag
     */
@@ -65,7 +65,7 @@ export namespace Components {
     /**
     * Extra rounded colors
     */
-    'pill'?: any;
+    'pill'?: boolean;
     /**
     * The type of the button, leave empty in case of a link
     */
@@ -97,11 +97,11 @@ export namespace Components {
     /**
     * Progress percentage
     */
-    'progress': number | string;
+    'progress': number;
     /**
     * Show the progress as text in the progress bar
     */
-    'text': boolean | 'true' | 'false';
+    'text': boolean;
   }
   interface EvbProgressbarAttributes extends StencilHTMLAttributes {
     /**
@@ -111,11 +111,11 @@ export namespace Components {
     /**
     * Progress percentage
     */
-    'progress'?: number | string;
+    'progress'?: number;
     /**
     * Show the progress as text in the progress bar
     */
-    'text'?: boolean | 'true' | 'false';
+    'text'?: boolean;
   }
 }
 

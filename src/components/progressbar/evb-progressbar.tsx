@@ -1,4 +1,4 @@
-import { Component, Prop, Watch, State } from "@stencil/core";
+import { Component, Prop, Watch } from "@stencil/core";
 
 @Component({
   tag: 'evb-progressbar',
@@ -11,21 +11,19 @@ export class ProgressBar {
   /**
    * Progress percentage
    */
-  @Prop() progress: number | string;
+  @Prop() progress: number;
   /**
    * Show the progress as text in the progress bar
    */
-  @Prop() text: boolean | 'true' | 'false';
+  @Prop() text: boolean;
   /**
    * The height of the bar in pixels
    */
   @Prop() height = 24;
 
-  @State() currentColor: 'danger' | 'neutral' | 'good';
-
   @Watch('progress')
-  applyColorClasses() {
-    // TODO:
+  progressUpdate(current: number, previous: number) {
+    console.log(`progress updated from ${previous} to ${current}`);
   }
 
   hostData() {
