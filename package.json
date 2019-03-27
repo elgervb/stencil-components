@@ -1,7 +1,7 @@
 {
-  "name": "stenciljs",
+  "name": "@elgervb/stencil-components",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Evb Stencil Webcomponent library",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "unpkg": "dist/ionic.js",
@@ -18,7 +18,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^0.18.1"
+    "@stencil/core": "^0.18.1",
+    "@types/jest": "23.3.14",
+    "@types/puppeteer": "1.12.3",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "puppeteer": "1.11.0"
   },
   "license": "MIT"
 }
