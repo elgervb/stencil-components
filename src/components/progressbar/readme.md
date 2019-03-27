@@ -14,6 +14,13 @@
 | `text`     | `text`     | Show the progress as text in the progress bar | `boolean` | `undefined` |
 
 
+## Events
+
+| Event       | Description | Type                |
+| ----------- | ----------- | ------------------- |
+| `completed` |             | `CustomEvent<void>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

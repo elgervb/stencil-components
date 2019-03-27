@@ -108,6 +108,7 @@ export namespace Components {
     * The height of the bar in pixels
     */
     'height'?: number;
+    'onCompleted'?: (event: CustomEvent<void>) => void;
     /**
     * Progress percentage
     */
