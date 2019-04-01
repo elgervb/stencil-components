@@ -3,8 +3,7 @@ import { Component, Prop, Watch, Event, EventEmitter } from "@stencil/core";
 @Component({
   tag: 'evb-progressbar',
   styleUrl: 'evb-progressbar.css',
-  shadow: false,
-  scoped: true
+  shadow: true
 })
 export class ProgressBar {
 

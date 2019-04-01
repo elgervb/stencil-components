@@ -6,8 +6,7 @@ import { Component, Prop, EventEmitter, Event } from "@stencil/core";
 @Component({
   tag: 'evb-button',
   styleUrl: 'evb-button.css',
-  shadow: false,
-  scoped: true
+  shadow: true
 })
 export class EvbButton {
 

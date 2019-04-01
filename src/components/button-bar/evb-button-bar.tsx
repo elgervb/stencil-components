@@ -6,8 +6,7 @@ import { Component, Prop } from "@stencil/core";
 @Component({
   tag: 'evb-button-bar',
   styleUrl: 'evb-button-bar.css',
-  shadow: false,
-  scoped: true
+  shadow: true
 })
 export class EvbButtonBar {
 
@@ -21,7 +20,7 @@ export class EvbButtonBar {
 
   render() {
     return (
-      <slot/>
+      <slot />
     );
   }
 }

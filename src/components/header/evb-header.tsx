@@ -6,8 +6,7 @@ import { Component, Prop } from "@stencil/core";
 @Component({
   tag: 'evb-header',
   styleUrl: 'evb-header.css',
-  shadow: false,
-  scoped: true
+  shadow: true
 })
 export class EvbButtonBar {
 
@@ -21,7 +20,7 @@ export class EvbButtonBar {
     const TagType = `h${this.heading}` as any;
     return (
       <TagType class="header">
-        <slot/>
+        <slot />
       </TagType>
     );
   }

@@ -1,4 +1,3 @@
-
 :host {
   overflow: hidden;
   text-decoration: none;
@@ -8,7 +7,7 @@
 
 button, a {
   border: 1px solid transparent;
-  color: #fff;
+  color: var(--evb-text-color-invert);
   font-size: 1em;
   font-weight: 500;
   line-height: 1.5;
@@ -36,7 +35,7 @@ button.ghost {
   border-color: currentColor;
 }
 button.ghost:hover {
-  color: #fff;
+  color: var(--evb-text-color-invert);
   background-color: var(--evb-primary-color-darker);
 }
 button.pill {
