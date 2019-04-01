@@ -86,9 +86,6 @@ export namespace Components {
     'heading': number | string;
   }
 
-  interface EvbCollection {}
-  interface EvbCollectionAttributes extends StencilHTMLAttributes {}
-
   interface EvbProgressbar {
     /**
     * The height of the bar in pixels
@@ -118,6 +115,9 @@ export namespace Components {
     */
     'text'?: boolean;
   }
+
+  interface EvbCollection {}
+  interface EvbCollectionAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
@@ -126,8 +126,8 @@ declare global {
     'EvbButton': Components.EvbButton;
     'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
-    'EvbCollection': Components.EvbCollection;
     'EvbProgressbar': Components.EvbProgressbar;
+    'EvbCollection': Components.EvbCollection;
   }
 
   interface StencilIntrinsicElements {
@@ -135,8 +135,8 @@ declare global {
     'evb-button': Components.EvbButtonAttributes;
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
-    'evb-collection': Components.EvbCollectionAttributes;
     'evb-progressbar': Components.EvbProgressbarAttributes;
+    'evb-collection': Components.EvbCollectionAttributes;
   }
 
 
@@ -164,16 +164,16 @@ declare global {
     new (): HTMLEvbHeaderElement;
   };
 
-  interface HTMLEvbCollectionElement extends Components.EvbCollection, HTMLStencilElement {}
-  var HTMLEvbCollectionElement: {
-    prototype: HTMLEvbCollectionElement;
-    new (): HTMLEvbCollectionElement;
-  };
-
   interface HTMLEvbProgressbarElement extends Components.EvbProgressbar, HTMLStencilElement {}
   var HTMLEvbProgressbarElement: {
     prototype: HTMLEvbProgressbarElement;
     new (): HTMLEvbProgressbarElement;
+  };
+
+  interface HTMLEvbCollectionElement extends Components.EvbCollection, HTMLStencilElement {}
+  var HTMLEvbCollectionElement: {
+    prototype: HTMLEvbCollectionElement;
+    new (): HTMLEvbCollectionElement;
   };
 
   interface HTMLElementTagNameMap {
@@ -181,8 +181,8 @@ declare global {
     'evb-button': HTMLEvbButtonElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
-    'evb-collection': HTMLEvbCollectionElement
     'evb-progressbar': HTMLEvbProgressbarElement
+    'evb-collection': HTMLEvbCollectionElement
   }
 
   interface ElementTagNameMap {
@@ -190,8 +190,8 @@ declare global {
     'evb-button': HTMLEvbButtonElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;
-    'evb-collection': HTMLEvbCollectionElement;
     'evb-progressbar': HTMLEvbProgressbarElement;
+    'evb-collection': HTMLEvbCollectionElement;
   }
 
 
