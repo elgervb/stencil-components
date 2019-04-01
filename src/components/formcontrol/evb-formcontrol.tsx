@@ -3,7 +3,10 @@ import { Component, Prop } from "@stencil/core";
 @Component({
   tag: 'evb-formcontrol',
   shadow: true,
-  styleUrl: './evb-formcontrol.css'
+  styleUrls: [
+    'evb-formcontrol.css',
+    'evb-formcontrol-textarea.css'
+  ]
 })
 export class EvbFormControl {
 

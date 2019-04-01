@@ -1,0 +1,4 @@
+::slotted(textarea) {
+  resize: vertical;
+  height: 10em;
+}

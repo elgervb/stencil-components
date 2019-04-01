@@ -11,9 +11,8 @@
   width: 100%;
 }
 
-::slotted(textarea) {
-  resize: vertical;
-  height: 10em;
+::slotted(evb-range) {
+  padding: .5rem 0;
 }
 
 ::slotted(input:focus), ::slotted(textarea:focus) {

@@ -53,6 +53,9 @@ export class Mycollection implements ComponentWillLoad {
           <input type="text" placeholder="Enter a value" />
         </evb-formcontrol>
         <evb-formcontrol>
+          <evb-range />
+        </evb-formcontrol>
+        <evb-formcontrol>
           <textarea placeholder="Enter a value" />
         </evb-formcontrol>
       </section>

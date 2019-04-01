@@ -72,6 +72,9 @@ export namespace Components {
     'type'?: 'submit' | 'button' | 'reset';
   }
 
+  interface EvbRange {}
+  interface EvbRangeAttributes extends StencilHTMLAttributes {}
+
   interface EvbFormcontrol {
     'name': string;
   }
@@ -124,6 +127,7 @@ declare global {
   interface StencilElementInterfaces {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
+    'EvbRange': Components.EvbRange;
     'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
     'EvbProgressbar': Components.EvbProgressbar;
@@ -133,6 +137,7 @@ declare global {
   interface StencilIntrinsicElements {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
+    'evb-range': Components.EvbRangeAttributes;
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
     'evb-progressbar': Components.EvbProgressbarAttributes;
@@ -150,6 +155,12 @@ declare global {
   var HTMLEvbButtonElement: {
     prototype: HTMLEvbButtonElement;
     new (): HTMLEvbButtonElement;
+  };
+
+  interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
+  var HTMLEvbRangeElement: {
+    prototype: HTMLEvbRangeElement;
+    new (): HTMLEvbRangeElement;
   };
 
   interface HTMLEvbFormcontrolElement extends Components.EvbFormcontrol, HTMLStencilElement {}
@@ -179,6 +190,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
+    'evb-range': HTMLEvbRangeElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
     'evb-progressbar': HTMLEvbProgressbarElement
@@ -188,6 +200,7 @@ declare global {
   interface ElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
+    'evb-range': HTMLEvbRangeElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;
     'evb-progressbar': HTMLEvbProgressbarElement;

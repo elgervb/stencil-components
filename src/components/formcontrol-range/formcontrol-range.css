@@ -1,0 +1,106 @@
+:host {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  border: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: var(--evb-primary-color);
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+  height: .25rem;
+  transition-duration: .2s;
+  width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: var(--evb-primary-color);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 1rem;
+  -webkit-appearance: none;
+  margin-top: -0.5em;
+  width: 1rem;
+}
+
+input[type=range]::-moz-range-track {
+  background: var(--evb-primary-color);
+  border: none;
+  cursor: pointer;
+  height: .25rem;
+  transition-duration: .2s;
+  border-radius: 25px;
+  width: 100%;
+}
+
+input[type=range]::-moz-range-thumb {
+  background: var(--evb-primary-color);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+}
+
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 1px;
+  color: transparent;
+  cursor: pointer;
+  height: .25rem;
+  padding: .5rem;
+  transition-duration: .2s;
+  width: 100%;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: var(--evb-primary-color);
+  border: 0 solid #000101;
+  border-radius: 50;
+}
+input[type=range]::-ms-fill-upper {
+  background: lighten(var(--evb-primary-color), 25%);
+  border: 0 solid #000101;
+  border-radius: 50;
+}
+
+input[type=range]::-ms-thumb {
+  background: var(--evb-primary-color);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 1rem;
+  margin-top: -.1375em;
+  width: 1rem;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--evb-primary-color-darker);
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: var(--evb-primary-color);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: var(--evb-primary-color);
+}
