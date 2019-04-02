@@ -1,9 +1,9 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'evb-components',
+  namespace: 'evb',
   globalStyle: 'src/global/variables.css',
-  outputTargets:[
+  outputTargets: [
     { type: 'dist' },
     { type: 'docs' },
     {

@@ -19,6 +19,10 @@ export class Mycollection implements ComponentWillLoad {
     setInterval(() => this.progress = Math.floor(Math.random() * 100) + 1, 2500);
   }
 
+  test(event: CustomEvent<number>) {
+    console.log(event.detail, event);
+  }
+
   render() {
     return (
       <section>
@@ -53,7 +57,7 @@ export class Mycollection implements ComponentWillLoad {
           <input type="text" placeholder="Enter a value" />
         </evb-formcontrol>
         <evb-formcontrol>
-          <evb-range />
+          <evb-range value={10} min={0} max={100} onEvbInput={event => this.test(event)} />
         </evb-formcontrol>
         <evb-formcontrol>
           <textarea placeholder="Enter a value" />

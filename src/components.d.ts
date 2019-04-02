@@ -72,8 +72,22 @@ export namespace Components {
     'type'?: 'submit' | 'button' | 'reset';
   }
 
-  interface EvbRange {}
-  interface EvbRangeAttributes extends StencilHTMLAttributes {}
+  interface EvbRange {
+    'max': number;
+    'min': number;
+    'step': number;
+    'value': number;
+  }
+  interface EvbRangeAttributes extends StencilHTMLAttributes {
+    'max'?: number;
+    'min'?: number;
+    'onEvbBlur'?: (event: CustomEvent<void>) => void;
+    'onEvbChange'?: (event: CustomEvent<number>) => void;
+    'onEvbFocus'?: (event: CustomEvent<void>) => void;
+    'onEvbInput'?: (event: CustomEvent<number>) => void;
+    'step'?: number;
+    'value'?: number;
+  }
 
   interface EvbFormcontrol {
     'name': string;
