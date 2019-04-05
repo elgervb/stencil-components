@@ -13,7 +13,7 @@ import {
 } from '@stencil/core';
 import {
   PickedFile,
-} from './components/filepicker/pickedfile';
+} from './components/file-picker/pickedfile';
 
 
 export namespace Components {
@@ -111,6 +111,17 @@ export namespace Components {
     'onPick'?: (event: CustomEvent<PickedFile>) => void;
   }
 
+  interface EvbFilepreview {
+    'alt': string;
+    'caption'?: string;
+    'src': string;
+  }
+  interface EvbFilepreviewAttributes extends StencilHTMLAttributes {
+    'alt'?: string;
+    'caption'?: string;
+    'src'?: string;
+  }
+
   interface EvbRange {
     'max': number;
     'min': number;
@@ -178,6 +189,7 @@ declare global {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
     'EvbFilepicker': Components.EvbFilepicker;
+    'EvbFilepreview': Components.EvbFilepreview;
     'EvbRange': Components.EvbRange;
     'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
@@ -188,6 +200,7 @@ declare global {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
     'evb-filepicker': Components.EvbFilepickerAttributes;
+    'evb-filepreview': Components.EvbFilepreviewAttributes;
     'evb-range': Components.EvbRangeAttributes;
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
@@ -211,6 +224,12 @@ declare global {
   var HTMLEvbFilepickerElement: {
     prototype: HTMLEvbFilepickerElement;
     new (): HTMLEvbFilepickerElement;
+  };
+
+  interface HTMLEvbFilepreviewElement extends Components.EvbFilepreview, HTMLStencilElement {}
+  var HTMLEvbFilepreviewElement: {
+    prototype: HTMLEvbFilepreviewElement;
+    new (): HTMLEvbFilepreviewElement;
   };
 
   interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
@@ -241,6 +260,7 @@ declare global {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
     'evb-filepicker': HTMLEvbFilepickerElement
+    'evb-filepreview': HTMLEvbFilepreviewElement
     'evb-range': HTMLEvbRangeElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
@@ -251,6 +271,7 @@ declare global {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
     'evb-filepicker': HTMLEvbFilepickerElement;
+    'evb-filepreview': HTMLEvbFilepreviewElement;
     'evb-range': HTMLEvbRangeElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;

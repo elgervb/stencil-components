@@ -40,7 +40,32 @@
         display: block;
         margin: 0 auto;
     }
+    evb-filepreview {
+      max-width: 200px;
+      max-height: 200px;
+    }
   </style>
+  <script>
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+
+    setInterval(() => {
+      let progress = Math.floor(Math.random() * 100) + 1;
+      document.querySelector('evb-progressbar').setAttribute('progress', progress);
+    }, 2500);
+
+    // image preview with file picker
+    const filepickers = document.querySelectorAll('evb-filepicker');
+    const filepreview = document.querySelector('evb-filepreview');
+    for (const filepicker of filepickers) {
+      filepicker.addEventListener('pick', event => {
+        filepreview.setAttribute('src', event.detail.dataUrl);
+        filepreview.setAttribute('caption', event.detail.file.name);
+      });
+    }
+  });
+
+  </script>
 </head>
 <body>
 
@@ -48,10 +73,19 @@
     <evb-header heading="1">Evb Componentes</evb-header>
 
     <evb-header heading="2">File upload</evb-header>
-    <evb-filepicker></evb-filepicker> <br />
-    <evb-filepicker multiple="true" accept="image/*">
-      <p>multiple images</p>
-    </evb-filepicker>
+
+    <evb-button-bar>
+      <evb-filepicker input="true"></evb-filepicker>
+    </evb-button-bar>
+
+    <evb-button-bar>
+      <evb-filepicker multiple="true" accept="image/*">
+        <evb-button ghost="true" pill="true">Pick a file</evb-button>
+      </evb-filepicker>
+    </evb-button-bar>
+
+    <evb-header heading="2">Image preview <em>(pick a file)</em></evb-header>
+    <evb-filepreview></evb-filepreview>
 
     <evb-header heading="2">Progress bar</evb-header>
     <evb-progressbar progress="75" text="true"></evb-progressbar>

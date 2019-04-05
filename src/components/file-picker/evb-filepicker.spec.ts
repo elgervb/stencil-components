@@ -27,6 +27,14 @@ describe('evb-filepicker', () => {
 
         expect(result).toBe(false);
       });
+
+      it('should accept all when accept=empty', () => {
+        const mockFile = jest.fn(() => ({ type: 'image/jpeg' }));
+        // @ts-ignore
+        const result = component.validateMimes(mockFile());
+
+        expect(result).toBe(true);
+      });
     });
 
     describe('validate wildcard mimetypes', () => {

@@ -1,0 +1,17 @@
+:host {
+  display: inline-flex;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  text-align: center;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+

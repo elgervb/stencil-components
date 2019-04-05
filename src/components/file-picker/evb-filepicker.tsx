@@ -30,7 +30,7 @@ export class EvbFilepicker {
   @Event() pick: EventEmitter<PickedFile>;
 
   get pickerInput(): HTMLInputElement {
-    return this.host.querySelector<HTMLInputElement>('input[type="file"]');
+    return this.host.shadowRoot.querySelector<HTMLInputElement>('input[type="file"]');
   }
 
   @Listen('click')
@@ -57,12 +57,17 @@ export class EvbFilepicker {
   /**
    * Validate a file against allowed mimetypes
    */
-  validateMimes(file: File, mimeTypes: string): boolean {
+  validateMimes(file: File, allowedMimeTypes?: string): boolean {
 
-    if (mimeTypes.indexOf(',') === -1) {
-      return this.validateMimeType(file, mimeTypes);
+    // check if we want to limit the filepicking...
+    if (!allowedMimeTypes) {
+      return true;
+    }
+
+    if (allowedMimeTypes.indexOf(',') === -1) {
+      return this.validateMimeType(file, allowedMimeTypes);
     } else {
-      return mimeTypes.split(',').reduce((acc, cur) => {
+      return allowedMimeTypes.split(',').reduce((acc, cur) => {
         return this.validateMimeType(file, cur) || acc;
       }, false);
     }
@@ -84,16 +89,11 @@ export class EvbFilepicker {
 
     reader.onload = () => {
       const dataUrl = reader.result.toString();
+      console.log('onPick');
       this.pick.emit({
         file,
         dataUrl
       });
-
-      try {
-        this.pickerInput.value = '';
-      } catch {
-        // swallow error, IE purposes only
-      }
     };
 
     reader.readAsDataURL(file);
