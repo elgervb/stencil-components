@@ -8,6 +8,12 @@
 import '@stencil/core';
 
 
+import {
+  EventEmitter,
+} from '@stencil/core';
+import {
+  PickedFile,
+} from './components/filepicker/pickedfile';
 
 
 export namespace Components {
@@ -72,6 +78,39 @@ export namespace Components {
     'type'?: 'submit' | 'button' | 'reset';
   }
 
+  interface EvbFilepicker {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept': string;
+    /**
+    * Should we show the input type=file?
+    */
+    'input': boolean;
+    /**
+    * indicates that the user may choose more than one file
+    */
+    'multiple': boolean;
+  }
+  interface EvbFilepickerAttributes extends StencilHTMLAttributes {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept'?: string;
+    /**
+    * Should we show the input type=file?
+    */
+    'input'?: boolean;
+    /**
+    * indicates that the user may choose more than one file
+    */
+    'multiple'?: boolean;
+    /**
+    * Emits the dataurl for the image
+    */
+    'onPick'?: (event: CustomEvent<PickedFile>) => void;
+  }
+
   interface EvbRange {
     'max': number;
     'min': number;
@@ -133,14 +172,19 @@ export namespace Components {
     'text'?: boolean;
   }
 
-  interface EvbCollection {}
-  interface EvbCollectionAttributes extends StencilHTMLAttributes {}
+  interface EvbCollection {
+    'heading': string;
+  }
+  interface EvbCollectionAttributes extends StencilHTMLAttributes {
+    'heading'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
+    'EvbFilepicker': Components.EvbFilepicker;
     'EvbRange': Components.EvbRange;
     'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
@@ -151,6 +195,7 @@ declare global {
   interface StencilIntrinsicElements {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
+    'evb-filepicker': Components.EvbFilepickerAttributes;
     'evb-range': Components.EvbRangeAttributes;
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
@@ -169,6 +214,12 @@ declare global {
   var HTMLEvbButtonElement: {
     prototype: HTMLEvbButtonElement;
     new (): HTMLEvbButtonElement;
+  };
+
+  interface HTMLEvbFilepickerElement extends Components.EvbFilepicker, HTMLStencilElement {}
+  var HTMLEvbFilepickerElement: {
+    prototype: HTMLEvbFilepickerElement;
+    new (): HTMLEvbFilepickerElement;
   };
 
   interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
@@ -204,6 +255,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
+    'evb-filepicker': HTMLEvbFilepickerElement
     'evb-range': HTMLEvbRangeElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
@@ -214,6 +266,7 @@ declare global {
   interface ElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
+    'evb-filepicker': HTMLEvbFilepickerElement;
     'evb-range': HTMLEvbRangeElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;

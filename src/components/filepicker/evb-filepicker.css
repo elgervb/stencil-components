@@ -1,0 +1,8 @@
+:host {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+input[type=file].hidden {
+  display: none;
+}

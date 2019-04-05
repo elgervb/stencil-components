@@ -1,13 +1,13 @@
-import { Component, ComponentWillLoad, State, } from '@stencil/core';
+import { Component, ComponentWillLoad, State, Prop, } from '@stencil/core';
 
 @Component({
   tag: 'evb-collection',
   styleUrl: 'my-collection.css',
-  shadow: false,
-  scoped: true
+  shadow: true,
 })
 export class Mycollection implements ComponentWillLoad {
 
+  @Prop() heading: string;
   @State()
   progress = 10;
 
@@ -26,7 +26,13 @@ export class Mycollection implements ComponentWillLoad {
   render() {
     return (
       <section>
-        <evb-header heading="1">Evb Components</evb-header>
+        <evb-header class="green" heading="1">{this.heading}</evb-header>
+
+        <evb-header heading="2">File upload</evb-header>
+        <evb-filepicker onPick={file => console.log(file)}></evb-filepicker> <br />
+        <evb-filepicker onPick={file => console.log(file)} multiple={true} accept="image/*">
+          <p>multiple images</p>
+        </evb-filepicker>
 
         <evb-header heading="2">Progress bar</evb-header>
         <evb-progressbar progress={this.progress} text={true}></evb-progressbar>
