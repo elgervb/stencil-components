@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  background-color: #999;
+  min-height: 1em;
+}
+
+:host(.dropzone--active) {
+  background-color: red;
+}
+
+:host(.dropzone--hover) {
+  background-color: green;
+}

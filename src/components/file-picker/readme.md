@@ -21,6 +21,25 @@
 | `pick` | Emits the dataurl for the image | `CustomEvent<PickedFile>` |
 
 
+## Methods
+
+### `handleFiles(files: FileList) => void`
+
+
+
+#### Parameters
+
+| Name    | Type       | Description |
+| ------- | ---------- | ----------- |
+| `files` | `FileList` |             |
+
+#### Returns
+
+Type: `void`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
