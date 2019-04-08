@@ -78,8 +78,17 @@ export namespace Components {
     'type'?: 'submit' | 'button' | 'reset';
   }
 
-  interface EvbDropzone {}
+  interface EvbDropzone {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept': string;
+  }
   interface EvbDropzoneAttributes extends StencilHTMLAttributes {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept'?: string;
     'onDropped'?: (event: CustomEvent<PickedFile>) => void;
   }
 

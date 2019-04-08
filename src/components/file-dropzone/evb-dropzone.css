@@ -1,13 +1,16 @@
 :host {
   display: flex;
-  background-color: #999;
-  min-height: 1em;
+  background-color: transparent;
+  min-height: 2em;
+  border: 2px dashed #999;
+  padding: .5rem;
+  transition: all .2s ease-in;
 }
 
 :host(.dropzone--active) {
-  background-color: red;
+  background-color: #e6e6e6;
 }
 
 :host(.dropzone--hover) {
-  background-color: green;
+  background-color: #f2f2f2;
 }

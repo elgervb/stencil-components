@@ -1,4 +1,4 @@
-import { Component, Element, Listen, State, Event, EventEmitter, ComponentInterface } from "@stencil/core";
+import { Component, Element, Listen, State, Event, EventEmitter, ComponentInterface, Prop } from "@stencil/core";
 import { PickedFile } from "../file-picker/pickedfile";
 
 @Component({
@@ -7,6 +7,14 @@ import { PickedFile } from "../file-picker/pickedfile";
   styleUrl: 'evb-dropzone.css'
 })
 export class EvbDropzone implements ComponentInterface {
+
+  /**
+   * A string that defines the file types the file input should accept. This string is a
+   * comma-separated list of unique file type specifiers.
+   * To accept images, video and audio, use: accept="audio/*,video/*,image/*"
+   * otherwise provide the correct mimetype, eg: image/png for png images etc
+   */
+  @Prop() accept: string;
 
   @Event()
   dropped: EventEmitter<PickedFile>;
@@ -59,6 +67,9 @@ export class EvbDropzone implements ComponentInterface {
     if (event.dataTransfer.files) {
       this.filePicker.handleFiles(event.dataTransfer.files);
     }
+
+    this.active = false;
+    this.hover = false;
   }
 
   componentDidLoad() {
@@ -85,7 +96,12 @@ export class EvbDropzone implements ComponentInterface {
   }
 
   render() {
-    return <evb-filepicker onPick={event => this.dropped.emit(event.detail)}></evb-filepicker>;
+    return ([
+      <evb-filepicker
+        onPick={event => this.dropped.emit(event.detail)}
+        accept={this.accept}></evb-filepicker>,
+      <slot />
+    ]);
   }
 
   private cancelEvent(event: DragEvent) {

@@ -18,6 +18,7 @@ export class EvbFilepicker {
    * otherwise provide the correct mimetype, eg: image/png for png images etc
    */
   @Prop() accept: string;
+
   /**
    * Should we show the input type=file?
    */
@@ -44,7 +45,6 @@ export class EvbFilepicker {
 
   @Method()
   handleFiles(files: FileList) {
-    // TODO: make file type configurable through @Prop
     if (files && files.length) {
       for (let i = 0; i < files.length; i++) {
         let file = files[i];
