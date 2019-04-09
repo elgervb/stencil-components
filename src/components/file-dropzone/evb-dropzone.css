@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  background-color: transparent;
+  min-height: 2em;
+  border: 2px dashed var(--evb-primary-color);
+  padding: .5rem;
+  transition: all .2s ease-in;
+}
+
+:host(.dropzone--active) {
+  background-color: #e6e6e6;
+}
+
+:host(.dropzone--hover) {
+  background-color: #f2f2f2;
+}

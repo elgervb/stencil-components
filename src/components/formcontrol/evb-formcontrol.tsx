@@ -1,4 +1,4 @@
-import { Component, Prop } from "@stencil/core";
+import { Component, ComponentInterface } from "@stencil/core";
 
 @Component({
   tag: 'evb-formcontrol',
@@ -8,9 +8,7 @@ import { Component, Prop } from "@stencil/core";
     'evb-formcontrol-textarea.css'
   ]
 })
-export class EvbFormControl {
-
-  @Prop({ reflectToAttr: true }) name: string;
+export class EvbFormControl implements ComponentInterface {
 
   render() {
     return (

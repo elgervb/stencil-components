@@ -19,9 +19,15 @@ import {
 export namespace Components {
 
   interface EvbButtonBar {
+    /**
+    * Justify the contents of the buttonbar
+    */
     'justify': 'left' | 'center' | 'right';
   }
   interface EvbButtonBarAttributes extends StencilHTMLAttributes {
+    /**
+    * Justify the contents of the buttonbar
+    */
     'justify'?: 'left' | 'center' | 'right';
   }
 
@@ -78,11 +84,29 @@ export namespace Components {
     'type'?: 'submit' | 'button' | 'reset';
   }
 
+  interface EvbDropzone {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept': string;
+  }
+  interface EvbDropzoneAttributes extends StencilHTMLAttributes {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept'?: string;
+    /**
+    * Fired after a file has been picked§
+    */
+    'onDropped'?: (event: CustomEvent<PickedFile>) => void;
+  }
+
   interface EvbFilepicker {
     /**
     * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
     */
     'accept': string;
+    'handleFiles': (files: FileList) => void;
     /**
     * Should we show the input type=file?
     */
@@ -112,13 +136,31 @@ export namespace Components {
   }
 
   interface EvbFilepreview {
+    /**
+    * The alt text
+    */
     'alt': string;
+    /**
+    * an optional caption to show the the user
+    */
     'caption'?: string;
+    /**
+    * The source (data) url of the image to preview
+    */
     'src': string;
   }
   interface EvbFilepreviewAttributes extends StencilHTMLAttributes {
+    /**
+    * The alt text
+    */
     'alt'?: string;
+    /**
+    * an optional caption to show the the user
+    */
     'caption'?: string;
+    /**
+    * The source (data) url of the image to preview
+    */
     'src'?: string;
   }
 
@@ -139,12 +181,8 @@ export namespace Components {
     'value'?: number;
   }
 
-  interface EvbFormcontrol {
-    'name': string;
-  }
-  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {
-    'name'?: string;
-  }
+  interface EvbFormcontrol {}
+  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {}
 
   interface EvbHeader {
     'heading': number | string;
@@ -188,6 +226,7 @@ declare global {
   interface StencilElementInterfaces {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
+    'EvbDropzone': Components.EvbDropzone;
     'EvbFilepicker': Components.EvbFilepicker;
     'EvbFilepreview': Components.EvbFilepreview;
     'EvbRange': Components.EvbRange;
@@ -199,6 +238,7 @@ declare global {
   interface StencilIntrinsicElements {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
+    'evb-dropzone': Components.EvbDropzoneAttributes;
     'evb-filepicker': Components.EvbFilepickerAttributes;
     'evb-filepreview': Components.EvbFilepreviewAttributes;
     'evb-range': Components.EvbRangeAttributes;
@@ -218,6 +258,12 @@ declare global {
   var HTMLEvbButtonElement: {
     prototype: HTMLEvbButtonElement;
     new (): HTMLEvbButtonElement;
+  };
+
+  interface HTMLEvbDropzoneElement extends Components.EvbDropzone, HTMLStencilElement {}
+  var HTMLEvbDropzoneElement: {
+    prototype: HTMLEvbDropzoneElement;
+    new (): HTMLEvbDropzoneElement;
   };
 
   interface HTMLEvbFilepickerElement extends Components.EvbFilepicker, HTMLStencilElement {}
@@ -259,6 +305,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
+    'evb-dropzone': HTMLEvbDropzoneElement
     'evb-filepicker': HTMLEvbFilepickerElement
     'evb-filepreview': HTMLEvbFilepreviewElement
     'evb-range': HTMLEvbRangeElement
@@ -270,6 +317,7 @@ declare global {
   interface ElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
+    'evb-dropzone': HTMLEvbDropzoneElement;
     'evb-filepicker': HTMLEvbFilepickerElement;
     'evb-filepreview': HTMLEvbFilepreviewElement;
     'evb-range': HTMLEvbRangeElement;

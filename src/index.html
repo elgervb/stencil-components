@@ -63,6 +63,12 @@
         filepreview.setAttribute('caption', event.detail.file.name);
       });
     }
+
+    const dropzone = document.querySelector('evb-dropzone');
+    dropzone.addEventListener('dropped', event => {
+      filepreview.setAttribute('src', event.detail.dataUrl);
+      filepreview.setAttribute('caption', event.detail.file.name);
+    });
   });
 
   </script>
@@ -70,17 +76,20 @@
 <body>
 
   <section class="container">
-    <evb-header heading="1">Evb Componentes</evb-header>
+    <evb-header heading="1">Evb Components</evb-header>
 
     <evb-header heading="2">File upload</evb-header>
+    <evb-dropzone>
+      drop files
+    </evb-dropzone>
 
-    <evb-button-bar>
+    <evb-button-bar >
       <evb-filepicker input="true"></evb-filepicker>
     </evb-button-bar>
 
     <evb-button-bar>
       <evb-filepicker multiple="true" accept="image/*">
-        <evb-button ghost="true" pill="true">Pick a file</evb-button>
+        <evb-button ghost="true" pill="true" draggable="true">Pick a file</evb-button>
       </evb-filepicker>
     </evb-button-bar>
 

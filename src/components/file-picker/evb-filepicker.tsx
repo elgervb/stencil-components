@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Prop, Listen } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, Prop, Listen, Method, ComponentInterface } from "@stencil/core";
 import { PickedFile } from "./pickedfile";
 
 @Component({
@@ -6,10 +6,11 @@ import { PickedFile } from "./pickedfile";
   styleUrl: 'evb-filepicker.css',
   shadow: true
 })
-export class EvbFilepicker {
+export class EvbFilepicker implements ComponentInterface {
 
   /** indicates that the user may choose more than one file */
   @Prop() multiple: boolean;
+
   /**
    * A string that defines the file types the file input should accept. This string is a
    * comma-separated list of unique file type specifiers.
@@ -17,18 +18,22 @@ export class EvbFilepicker {
    * otherwise provide the correct mimetype, eg: image/png for png images etc
    */
   @Prop() accept: string;
+
   /**
    * Should we show the input type=file?
    */
   @Prop() input: boolean = false;
 
-
-  @Element() private host: HTMLElement;
   /**
    * Emits the dataurl for the image
    */
   @Event() pick: EventEmitter<PickedFile>;
 
+  @Element() private host: HTMLElement;
+
+  /**
+   * Returns the (hidden) file input element
+   */
   get pickerInput(): HTMLInputElement {
     return this.host.shadowRoot.querySelector<HTMLInputElement>('input[type="file"]');
   }
@@ -41,8 +46,8 @@ export class EvbFilepicker {
     // otherwise use the input to pick a file
   }
 
+  @Method()
   handleFiles(files: FileList) {
-    // TODO: make file type configurable through @Prop
     if (files && files.length) {
       for (let i = 0; i < files.length; i++) {
         let file = files[i];
@@ -50,7 +55,6 @@ export class EvbFilepicker {
           this.loadImage(file);
         }
       }
-
     }
   }
 
@@ -89,7 +93,7 @@ export class EvbFilepicker {
 
     reader.onload = () => {
       const dataUrl = reader.result.toString();
-      console.log('onPick');
+
       this.pick.emit({
         file,
         dataUrl
