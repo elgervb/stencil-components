@@ -9,6 +9,21 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null // disable service workers
-    }
-  ]
+    },
+  ],
+  testing: {
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 60,
+        "branches": 50,
+        "functions": 50,
+        "lines": 60
+      }
+    },
+  }
 };
