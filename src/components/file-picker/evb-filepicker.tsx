@@ -1,5 +1,6 @@
-import { Component, Element, Event, EventEmitter, Prop, Listen, Method, ComponentInterface } from "@stencil/core";
-import { PickedFile } from "./pickedfile";
+import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Method, Prop } from '@stencil/core';
+
+import { PickedFile } from './pickedfile';
 
 @Component({
   tag: 'evb-filepicker',
@@ -22,7 +23,7 @@ export class EvbFilepicker implements ComponentInterface {
   /**
    * Should we show the input type=file?
    */
-  @Prop() input: boolean = false;
+  @Prop() input = false;
 
   /**
    * Emits the dataurl for the image
@@ -49,8 +50,9 @@ export class EvbFilepicker implements ComponentInterface {
   @Method()
   handleFiles(files: FileList) {
     if (files && files.length) {
+      // tslint:disable-next-line: prefer-for-of for loop for FileList
       for (let i = 0; i < files.length; i++) {
-        let file = files[i];
+        const file = files[i];
         if (this.validateMimes(file, this.accept)) {
           this.loadImage(file);
         }
@@ -71,15 +73,14 @@ export class EvbFilepicker implements ComponentInterface {
     if (allowedMimeTypes.indexOf(',') === -1) {
       return this.validateMimeType(file, allowedMimeTypes);
     } else {
-      return allowedMimeTypes.split(',').reduce((acc, cur) => {
-        return this.validateMimeType(file, cur) || acc;
-      }, false);
+      return allowedMimeTypes.split(',').reduce((acc, cur) =>
+        this.validateMimeType(file, cur) || acc, false);
     }
   }
 
   render() {
     return ([
-      <input type="file"
+      <input type='file'
         class={this.input ? '' : 'hidden'}
         onChange={event => this.handleFiles((event.target as HTMLInputElement).files)}
         multiple={this.multiple}
@@ -110,8 +111,8 @@ export class EvbFilepicker implements ComponentInterface {
 
     // handle audio/*, video/*, image/*
     if (['audio/*', 'video/*', 'image/*'].find(item => item === mimeType)) {
-      const regex = new RegExp(mimeType.replace('/*', '\/.*'));
-      return regex.test(file.type);
+      const wildcardRegex = new RegExp(mimeType.replace('/*', '\/.*'));
+      return wildcardRegex.test(file.type);
     }
 
     const regex = new RegExp(mimeType.trim(), 'i');

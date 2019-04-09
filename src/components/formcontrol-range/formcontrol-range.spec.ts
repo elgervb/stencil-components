@@ -1,4 +1,4 @@
-import { EvbRange } from "./formcontrol-range";
+import { EvbRange } from './formcontrol-range';
 
 describe('EvbRange', () => {
   let component: EvbRange;

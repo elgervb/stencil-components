@@ -1,4 +1,4 @@
-import { EvbFilepicker } from "./evb-filepicker";
+import { EvbFilepicker } from './evb-filepicker';
 
 describe('evb-filepicker', () => {
 
@@ -91,10 +91,9 @@ describe('evb-filepicker', () => {
         const result = component.validateMimes(mockFile(), mimeTypes);
 
         expect(result).toBe(false);
-      })
+      });
     });
 
   });
 
 });
-

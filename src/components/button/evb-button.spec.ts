@@ -1,4 +1,4 @@
-import { EvbButton } from "./evb-button";
+import { EvbButton } from './evb-button';
 
 describe('EvbButton', () => {
   let component: EvbButton;

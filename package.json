@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "lint": "tslint -p ./tsconfig.json",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
@@ -23,7 +24,8 @@
     "@types/puppeteer": "1.12.3",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
-    "puppeteer": "1.11.0"
+    "puppeteer": "1.11.0",
+    "tslint": "^5.15.0"
   },
   "license": "MIT"
 }

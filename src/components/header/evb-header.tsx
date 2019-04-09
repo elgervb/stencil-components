@@ -1,4 +1,7 @@
-import { Component, Prop, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface, Prop } from '@stencil/core';
+
+const MIN_HEADING = 1;
+const MAX_HEADING = 6;
 
 /**
  * Container for buttons
@@ -17,9 +20,10 @@ export class EvbButtonBar implements ComponentInterface {
   }
 
   render() {
+    // tslint:disable-next-line: no-any variable-name
     const TagType = `h${this.heading}` as any;
     return (
-      <TagType class="header">
+      <TagType class='header'>
         <slot />
       </TagType>
     );
@@ -31,8 +35,8 @@ export class EvbButtonBar implements ComponentInterface {
    * @throws when heading is not valid
    */
   private validateHeading(heading: number | string) {
-    const number: number = typeof heading === 'number' ? heading : parseInt(heading, 10)
-    if (number > 6 || number < 1) {
+    const number: number = typeof heading === 'number' ? heading : parseInt(heading, 10);
+    if (number > MAX_HEADING || number < MIN_HEADING) {
       throw new Error('Heading must be between 1 and 6');
     }
   }

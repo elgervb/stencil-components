@@ -1,4 +1,4 @@
-import { EvbFormControl } from "./evb-formcontrol";
+import { EvbFormControl } from './evb-formcontrol';
 
 describe('EvbFormControl', () => {
   let component: EvbFormControl;

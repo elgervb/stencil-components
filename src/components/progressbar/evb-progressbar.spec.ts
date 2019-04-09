@@ -1,7 +1,7 @@
-import { EvbProgressBar } from "./evb-progressbar";
+import { EvbProgressBar } from './evb-progressbar';
 
 describe('EvbProgressBar', () => {
-  let component: EvbProgressBar
+  let component: EvbProgressBar;
 
   beforeEach(() => component = new EvbProgressBar());
 
@@ -13,13 +13,14 @@ describe('EvbProgressBar', () => {
 
     it('should have a default data-progress attribute on the host', () => {
       const hostData = component.hostData();
-      expect(hostData["data-progress"]).toBe(0);
+      expect(hostData['data-progress']).toBe(0);
     });
 
     it('should have data-progress attribute on the host which reflects the progress', () => {
-      component.progress = 88;
+      const expected = 88;
+      component.progress = expected;
       const hostData = component.hostData();
-      expect(hostData["data-progress"]).toBe(88);
+      expect(hostData['data-progress']).toBe(expected);
     });
-  })
-})
+  });
+});

@@ -1,4 +1,4 @@
-import { EvbFilePreview } from "./evb-file-preview";
+import { EvbFilePreview } from './evb-file-preview';
 
 describe('EvbFilePreview', () => {
   let component: EvbFilePreview;

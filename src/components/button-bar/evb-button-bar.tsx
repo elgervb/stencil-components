@@ -1,4 +1,4 @@
-import { Component, Prop, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface, Prop } from '@stencil/core';
 
 /**
  * Container for buttons
@@ -20,7 +20,7 @@ export class EvbButtonBar implements ComponentInterface {
       class: {
         [`justify-${this.justify || 'left'}`]: true
       }
-    }
+    };
   }
 
   render() {

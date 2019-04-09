@@ -1,4 +1,4 @@
-import { EvbHeader } from "./evb-header";
+import { EvbHeader } from './evb-header';
 
 describe('EvbRange', () => {
   let component: EvbHeader;

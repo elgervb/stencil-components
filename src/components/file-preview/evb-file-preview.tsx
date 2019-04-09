@@ -1,4 +1,4 @@
-import { Component, Prop, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-filepreview',
@@ -11,18 +11,12 @@ export class EvbFilePreview implements ComponentInterface {
    * The source (data) url of the image to preview
    */
   @Prop() src: string;
-  /**
-   * The alt text
-   */
-  @Prop() alt: string = 'preview';
-  /**
-   * an optional caption to show the the user
-   */
+  @Prop() alt = 'preview';
   @Prop() caption?: string;
 
   render() {
     if (this.src) {
-      const caption = <figcaption>{this.caption}</figcaption>
+      const caption = <figcaption>{this.caption}</figcaption>;
       return (
         <figure>
           <img src={this.src} alt={this.alt} />
