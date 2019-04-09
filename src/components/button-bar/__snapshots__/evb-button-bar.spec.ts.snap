@@ -1,19 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EvbProgressBar should render 1`] = `
+exports[`EvbButtonBar should render 1`] = `
 Object {
   "elm": undefined,
   "ishost": false,
-  "vattrs": Object {
-    "class": "progress__inner",
-    "style": Object {
-      "width": "",
-    },
-  },
+  "vattrs": null,
   "vchildren": null,
   "vkey": undefined,
   "vname": undefined,
-  "vtag": "div",
+  "vtag": "slot",
   "vtext": undefined,
 }
 `;

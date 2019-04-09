@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`evb-filepicker should render 1`] = `
+Array [
+  Object {
+    "elm": undefined,
+    "ishost": false,
+    "vattrs": Object {
+      "accept": undefined,
+      "class": "hidden",
+      "multiple": undefined,
+      "onChange": [Function],
+      "type": "file",
+    },
+    "vchildren": null,
+    "vkey": undefined,
+    "vname": undefined,
+    "vtag": "input",
+    "vtext": undefined,
+  },
+  Object {
+    "elm": undefined,
+    "ishost": false,
+    "vattrs": null,
+    "vchildren": null,
+    "vkey": undefined,
+    "vname": undefined,
+    "vtag": "slot",
+    "vtext": undefined,
+  },
+]
+`;

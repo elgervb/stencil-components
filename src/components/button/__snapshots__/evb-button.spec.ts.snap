@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EvbButton should render 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "className": "",
+    "disabled": false,
+    "onBlur": [Function],
+    "onFocus": [Function],
+    "type": "button",
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "slot",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "button",
+  "vtext": undefined,
+}
+`;

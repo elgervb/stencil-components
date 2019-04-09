@@ -6,6 +6,10 @@ describe('evb-filepicker', () => {
 
   beforeEach(() => component = new EvbFilepicker());
 
+  it('should render', () => {
+    expect(component.render()).toMatchSnapshot();
+  });
+
   describe('validation', () => {
 
     describe('validate simple mimetypes', () => {

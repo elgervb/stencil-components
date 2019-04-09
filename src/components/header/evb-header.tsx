@@ -8,7 +8,7 @@ import { Component, Prop } from "@stencil/core";
   styleUrl: 'evb-header.css',
   shadow: true
 })
-export class EvbButtonBar {
+export class EvbHeader {
 
   @Prop() heading!: number | string;
 

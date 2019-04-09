@@ -5,11 +5,11 @@ describe('EvbProgressBar', () => {
 
   beforeEach(() => component = new EvbProgressBar());
 
-  describe('progress', () => {
+  it('should render', () => {
+    expect(component.render()).toMatchSnapshot();
+  });
 
-    it('should render', () => {
-      expect(component.render()).toMatchSnapshot();
-    })
+  describe('progress', () => {
 
     it('should have a default data-progress attribute on the host', () => {
       const hostData = component.hostData();

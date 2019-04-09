@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EvbRange should render 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "class": "header",
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "slot",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "hundefined",
+  "vtext": undefined,
+}
+`;
