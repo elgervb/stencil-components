@@ -3,8 +3,8 @@ import { PickedFile } from "../file-picker/pickedfile";
 
 @Component({
   tag: 'evb-dropzone',
+  styleUrl: 'evb-dropzone.css',
   shadow: true,
-  styleUrl: 'evb-dropzone.css'
 })
 export class EvbDropzone implements ComponentInterface {
 
@@ -16,6 +16,9 @@ export class EvbDropzone implements ComponentInterface {
    */
   @Prop() accept: string;
 
+  /**
+   * Fired after a file has been picked§
+   */
   @Event()
   dropped: EventEmitter<PickedFile>;
 
@@ -88,7 +91,7 @@ export class EvbDropzone implements ComponentInterface {
 
   hostData() {
     return {
-      'class': {
+      class: {
         'dropzone--active': this.active,
         'dropzone--hover': this.hover
       },
