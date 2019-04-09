@@ -1,5 +1,6 @@
-import { Component, Element, Listen, State, Event, EventEmitter, ComponentInterface, Prop } from "@stencil/core";
-import { PickedFile } from "../file-picker/pickedfile";
+import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Prop, State } from '@stencil/core';
+
+import { PickedFile } from '../file-picker/pickedfile';
 
 @Component({
   tag: 'evb-dropzone',
@@ -107,7 +108,7 @@ export class EvbDropzone implements ComponentInterface {
     ]);
   }
 
-  private cancelEvent(event: DragEvent) {
+  private cancelEvent = (event: DragEvent) => {
     event.preventDefault();
   }
 }

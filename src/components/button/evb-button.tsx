@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Event, EventEmitter, Prop } from "@stencil/core";
+import { Component, ComponentInterface, Event, EventEmitter, Prop } from '@stencil/core';
 
 /**
  * Button component with click, focus and blur support
