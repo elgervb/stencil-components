@@ -22,5 +22,20 @@ describe('EvbProgressBar', () => {
       const hostData = component.hostData();
       expect(hostData['data-progress']).toBe(expected);
     });
+
+    it('should emit when progress is 100', () => {
+      const emit = jest.fn();
+      component.completed = { emit };
+
+      // tslint:disable-next-line: no-magic-numbers
+      component.progress = 99;
+
+      expect(emit).not.toHaveBeenCalled();
+
+      component.progress = 100;
+      component.progressUpdate(component.progress);
+
+      expect(emit).toHaveBeenCalled();
+    });
   });
 });
