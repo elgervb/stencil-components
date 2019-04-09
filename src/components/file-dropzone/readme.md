@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event     | Description | Type                      |
-| --------- | ----------- | ------------------------- |
-| `dropped` |             | `CustomEvent<PickedFile>` |
+| Event     | Description                         | Type                      |
+| --------- | ----------------------------------- | ------------------------- |
+| `dropped` | Fired after a file has been picked§ | `CustomEvent<PickedFile>` |
 
 
 ----------------------------------------------

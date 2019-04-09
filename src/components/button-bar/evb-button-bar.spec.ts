@@ -1,4 +1,4 @@
-import { EvbButtonBar } from "./evb-button-bar";
+import { EvbButtonBar } from './evb-button-bar';
 
 describe('EvbButtonBar', () => {
   let component: EvbButtonBar;

@@ -136,13 +136,7 @@ export namespace Components {
   }
 
   interface EvbFilepreview {
-    /**
-    * The alt text
-    */
     'alt': string;
-    /**
-    * an optional caption to show the the user
-    */
     'caption'?: string;
     /**
     * The source (data) url of the image to preview
@@ -150,13 +144,7 @@ export namespace Components {
     'src': string;
   }
   interface EvbFilepreviewAttributes extends StencilHTMLAttributes {
-    /**
-    * The alt text
-    */
     'alt'?: string;
-    /**
-    * an optional caption to show the the user
-    */
     'caption'?: string;
     /**
     * The source (data) url of the image to preview

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Event, Prop, Element, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface, Element, Event, EventEmitter, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-range',
@@ -26,7 +26,7 @@ export class EvbRange implements ComponentInterface {
 
   render() {
     return (
-      <input type="range"
+      <input type='range'
         value={this.value}
         min={this.min}
         max={this.max}

@@ -1,4 +1,4 @@
-import { Component, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface } from '@stencil/core';
 
 @Component({
   tag: 'evb-formcontrol',

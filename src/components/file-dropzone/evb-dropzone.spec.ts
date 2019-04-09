@@ -1,5 +1,4 @@
-import { EvbDropzone } from "./evb-dropzone";
-
+import { EvbDropzone } from './evb-dropzone';
 
 describe('EvbDropzone', () => {
 
@@ -13,7 +12,7 @@ describe('EvbDropzone', () => {
     expect(isActive(component)).toBeTruthy();
     component.dragEnd();
     expect(isActive(component)).toBeFalsy();
-  })
+  });
 
   it('should toggle hover', () => {
     expect(isHover(component)).toBeFalsy();
@@ -21,13 +20,13 @@ describe('EvbDropzone', () => {
     expect(isHover(component)).toBeTruthy();
     component.dragLeave();
     expect(isHover(component)).toBeFalsy();
-  })
+  });
 });
 
 function isActive(component: EvbDropzone) {
-  return component.hostData().class["dropzone--active"];
+  return component.hostData().class['dropzone--active'];
 }
 
 function isHover(component: EvbDropzone) {
-  return component.hostData().class["dropzone--hover"];
+  return component.hostData().class['dropzone--hover'];
 }

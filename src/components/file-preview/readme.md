@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type     | Default     |
-| --------- | --------- | ----------- | -------- | ----------- |
-| `alt`     | `alt`     |             | `string` | `'preview'` |
-| `caption` | `caption` |             | `string` | `undefined` |
-| `src`     | `src`     |             | `string` | `undefined` |
+| Property  | Attribute | Description                                   | Type     | Default     |
+| --------- | --------- | --------------------------------------------- | -------- | ----------- |
+| `alt`     | `alt`     |                                               | `string` | `'preview'` |
+| `caption` | `caption` |                                               | `string` | `undefined` |
+| `src`     | `src`     | The source (data) url of the image to preview | `string` | `undefined` |
 
 
 ----------------------------------------------

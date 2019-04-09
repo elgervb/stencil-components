@@ -1,11 +1,12 @@
-import { Component, Prop, Watch, Event, EventEmitter, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface, Event, EventEmitter, Prop, Watch } from '@stencil/core';
 
+const HALFWAY_THERE = 50;
 @Component({
   tag: 'evb-progressbar',
   styleUrl: 'evb-progressbar.css',
   shadow: true
 })
-export class ProgressBar implements ComponentInterface {
+export class EvbProgressBar implements ComponentInterface {
 
   /**
    * Progress percentage
@@ -31,7 +32,7 @@ export class ProgressBar implements ComponentInterface {
 
   hostData() {
     return {
-      class: { 'progress--with-text': this.text, 'progress--gt-50': this.progress > 50 },
+      class: { 'progress--with-text': this.text, 'progress--gt-50': this.progress > HALFWAY_THERE },
       style: { height: `${this.height}px` },
       'data-progress': this.progress || 0
     };
@@ -44,6 +45,6 @@ export class ProgressBar implements ComponentInterface {
       width: this.progress ? `${this.progress}%` : ''
     };
 
-    return <div class="progress__inner" style={styles}></div>;
+    return <div class='progress__inner' style={styles}></div>;
   }
 }

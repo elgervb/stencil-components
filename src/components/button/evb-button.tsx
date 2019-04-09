@@ -1,4 +1,4 @@
-import { Component, Prop, EventEmitter, Event, ComponentInterface } from "@stencil/core";
+import { Component, ComponentInterface, Event, EventEmitter, Prop } from '@stencil/core';
 
 /**
  * Button component with click, focus and blur support
@@ -19,7 +19,7 @@ export class EvbButton implements ComponentInterface {
   /** Extra rounded colors */
   @Prop() pill = false;
 
-  /** Whether or not the button is disabled*/
+  /** Whether or not the button is disabled */
   @Prop({ reflectToAttr: true }) disabled = false;
 
   /** Focus event */
@@ -34,12 +34,13 @@ export class EvbButton implements ComponentInterface {
    * Renders the components
    */
   render() {
+    // tslint:disable-next-line: variable-name no-any
     const TagType = this.href === undefined ? 'button' : 'a' as any;
     const attrs = (TagType === 'button') ? { type: this.type } : { href: this.href };
 
     const classes = [];
-    this.ghost ? classes.push('ghost') : '';
-    this.pill ? classes.push('pill') : '';
+    if (this.ghost) { classes.push('ghost'); }
+    if (this.pill) { classes.push('pill'); }
 
     return (
       <TagType
