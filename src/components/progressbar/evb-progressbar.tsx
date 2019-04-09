@@ -5,7 +5,7 @@ import { Component, Prop, Watch, Event, EventEmitter } from "@stencil/core";
   styleUrl: 'evb-progressbar.css',
   shadow: true
 })
-export class ProgressBar {
+export class EvbProgressBar {
 
   /**
    * Progress percentage
@@ -23,9 +23,7 @@ export class ProgressBar {
   @Event() completed: EventEmitter<void>;
 
   @Watch('progress')
-  progressUpdate(current: number, previous: number) {
-    console.log(`progress updated from ${previous} to ${current}`);
-
+  progressUpdate(current: number) {
     if (current >= 100) {
       this.completed.emit();
     }
@@ -43,7 +41,7 @@ export class ProgressBar {
    */
   render() {
     const styles = {
-      width: `${this.progress}%`
+      width: this.progress ? `${this.progress}%` : ''
     };
 
     return <div class="progress__inner" style={styles}></div>;

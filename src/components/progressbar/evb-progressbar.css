@@ -6,7 +6,7 @@
   position: relative;
 }
 
-:host(.progress--with-text::after) {
+:host(.progress--with-text)::after {
   content: attr(data-progress) '%';
   display: block;
   font-size: 1em;
