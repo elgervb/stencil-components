@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                            | Default     |
-| --------- | --------- | ----------- | ------------------------------- | ----------- |
-| `justify` | `justify` |             | `"center" \| "left" \| "right"` | `undefined` |
+| Property  | Attribute | Description                           | Type                            | Default     |
+| --------- | --------- | ------------------------------------- | ------------------------------- | ----------- |
+| `justify` | `justify` | Justify the contents of the buttonbar | `"center" \| "left" \| "right"` | `undefined` |
 
 
 ----------------------------------------------
