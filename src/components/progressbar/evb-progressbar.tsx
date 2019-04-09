@@ -6,7 +6,7 @@ const HALFWAY_THERE = 50;
   styleUrl: 'evb-progressbar.css',
   shadow: true
 })
-export class ProgressBar implements ComponentInterface {
+export class EvbProgressBar implements ComponentInterface {
 
   /**
    * Progress percentage

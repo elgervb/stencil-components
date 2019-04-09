@@ -11,7 +11,7 @@ const MAX_HEADING = 6;
   styleUrl: 'evb-header.css',
   shadow: true
 })
-export class EvbButtonBar implements ComponentInterface {
+export class EvbHeader implements ComponentInterface {
 
   @Prop() heading!: number | string;
 
