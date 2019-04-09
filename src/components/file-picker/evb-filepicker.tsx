@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Prop, Listen, Method } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, Prop, Listen, Method, ComponentInterface } from "@stencil/core";
 import { PickedFile } from "./pickedfile";
 
 @Component({
@@ -6,7 +6,7 @@ import { PickedFile } from "./pickedfile";
   styleUrl: 'evb-filepicker.css',
   shadow: true
 })
-export class EvbFilepicker {
+export class EvbFilepicker implements ComponentInterface {
 
   /** indicates that the user may choose more than one file */
   @Prop() multiple: boolean;
@@ -31,6 +31,9 @@ export class EvbFilepicker {
 
   @Element() private host: HTMLElement;
 
+  /**
+   * Returns the (hidden) file input element
+   */
   get pickerInput(): HTMLInputElement {
     return this.host.shadowRoot.querySelector<HTMLInputElement>('input[type="file"]');
   }

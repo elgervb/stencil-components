@@ -19,9 +19,15 @@ import {
 export namespace Components {
 
   interface EvbButtonBar {
+    /**
+    * Justify the contents of the buttonbar
+    */
     'justify': 'left' | 'center' | 'right';
   }
   interface EvbButtonBarAttributes extends StencilHTMLAttributes {
+    /**
+    * Justify the contents of the buttonbar
+    */
     'justify'?: 'left' | 'center' | 'right';
   }
 
@@ -89,6 +95,9 @@ export namespace Components {
     * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
     */
     'accept'?: string;
+    /**
+    * Fired after a file has been picked§
+    */
     'onDropped'?: (event: CustomEvent<PickedFile>) => void;
   }
 
@@ -127,13 +136,31 @@ export namespace Components {
   }
 
   interface EvbFilepreview {
+    /**
+    * The alt text
+    */
     'alt': string;
+    /**
+    * an optional caption to show the the user
+    */
     'caption'?: string;
+    /**
+    * The source (data) url of the image to preview
+    */
     'src': string;
   }
   interface EvbFilepreviewAttributes extends StencilHTMLAttributes {
+    /**
+    * The alt text
+    */
     'alt'?: string;
+    /**
+    * an optional caption to show the the user
+    */
     'caption'?: string;
+    /**
+    * The source (data) url of the image to preview
+    */
     'src'?: string;
   }
 
@@ -154,12 +181,8 @@ export namespace Components {
     'value'?: number;
   }
 
-  interface EvbFormcontrol {
-    'name': string;
-  }
-  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {
-    'name'?: string;
-  }
+  interface EvbFormcontrol {}
+  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {}
 
   interface EvbHeader {
     'heading': number | string;

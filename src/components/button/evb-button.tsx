@@ -1,4 +1,4 @@
-import { Component, Prop, EventEmitter, Event } from "@stencil/core";
+import { Component, Prop, EventEmitter, Event, ComponentInterface } from "@stencil/core";
 
 /**
  * Button component with click, focus and blur support
@@ -8,7 +8,7 @@ import { Component, Prop, EventEmitter, Event } from "@stencil/core";
   styleUrl: 'evb-button.css',
   shadow: true
 })
-export class EvbButton {
+export class EvbButton implements ComponentInterface {
 
   /** The type of the button, leave empty in case of a link */
   @Prop() type?: 'submit' | 'button' | 'reset' = 'button';

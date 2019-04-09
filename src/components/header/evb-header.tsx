@@ -1,4 +1,4 @@
-import { Component, Prop } from "@stencil/core";
+import { Component, Prop, ComponentInterface } from "@stencil/core";
 
 /**
  * Container for buttons
@@ -8,7 +8,7 @@ import { Component, Prop } from "@stencil/core";
   styleUrl: 'evb-header.css',
   shadow: true
 })
-export class EvbHeader {
+export class EvbButtonBar implements ComponentInterface {
 
   @Prop() heading!: number | string;
 

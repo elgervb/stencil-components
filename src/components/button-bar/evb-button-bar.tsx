@@ -1,4 +1,4 @@
-import { Component, Prop } from "@stencil/core";
+import { Component, Prop, ComponentInterface } from "@stencil/core";
 
 /**
  * Container for buttons
@@ -8,13 +8,18 @@ import { Component, Prop } from "@stencil/core";
   styleUrl: 'evb-button-bar.css',
   shadow: true
 })
-export class EvbButtonBar {
+export class EvbButtonBar implements ComponentInterface {
 
+  /**
+   * Justify the contents of the buttonbar
+   */
   @Prop() justify: 'left' | 'center' | 'right';
 
   hostData() {
     return {
-      class: `justify-${this.justify}`
+      class: {
+        [`justify-${this.justify || 'left'}`]: true
+      }
     }
   }
 
