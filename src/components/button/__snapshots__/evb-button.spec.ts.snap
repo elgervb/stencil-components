@@ -5,11 +5,101 @@ Object {
   "elm": undefined,
   "ishost": false,
   "vattrs": Object {
-    "className": "",
+    "class": "",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],
     "type": "button",
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "slot",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "button",
+  "vtext": undefined,
+}
+`;
+
+exports[`EvbButton should render as a link 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "class": "",
+    "disabled": false,
+    "href": "/assets/nice.gif",
+    "onBlur": [Function],
+    "onFocus": [Function],
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "slot",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "a",
+  "vtext": undefined,
+}
+`;
+
+exports[`EvbButton should render as a reset button 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "class": "",
+    "disabled": false,
+    "onBlur": [Function],
+    "onFocus": [Function],
+    "type": "reset",
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "slot",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "button",
+  "vtext": undefined,
+}
+`;
+
+exports[`EvbButton should render with Props 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "class": "ghost pill",
+    "disabled": false,
+    "onBlur": [Function],
+    "onFocus": [Function],
+    "type": "submit",
   },
   "vchildren": Array [
     Object {

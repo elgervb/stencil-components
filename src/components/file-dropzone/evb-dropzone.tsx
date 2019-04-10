@@ -50,9 +50,10 @@ export class EvbDropzone implements ComponentInterface {
     this.active = false;
   }
 
-  @Listen('dragover')
-  dragOver(e: DragEvent) {
-    e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+  @Listen('dragover', { passive: false })
+  dragOver(event: DragEvent) {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
   }
 
   @Listen('dragenter')
@@ -65,8 +66,9 @@ export class EvbDropzone implements ComponentInterface {
     this.hover = false;
   }
 
-  @Listen('drop')
+  @Listen('drop', { passive: false })
   drop(event: DragEvent) {
+    event.preventDefault();
     event.stopPropagation();
     if (event.dataTransfer.files) {
       this.filePicker.handleFiles(event.dataTransfer.files);
@@ -77,17 +79,8 @@ export class EvbDropzone implements ComponentInterface {
   }
 
   componentDidLoad() {
-    // we cannot use @Listen('dragover) as it will throw an error:
-    // Unable to preventDefault inside passive event listener invocation.
-    this.host.addEventListener('dragover', this.cancelEvent);
-    this.host.addEventListener('drop', this.cancelEvent);
-
+    console.log('HOST', this.host);
     this.filePicker = this.host.shadowRoot.querySelector('evb-filepicker');
-  }
-
-  componentDidUnload() {
-    this.host.removeEventListener('dragover', this.cancelEvent);
-    this.host.removeEventListener('drop', this.cancelEvent);
   }
 
   hostData() {
@@ -106,9 +99,5 @@ export class EvbDropzone implements ComponentInterface {
         accept={this.accept}></evb-filepicker>,
       <slot />
     ]);
-  }
-
-  private cancelEvent = (event: DragEvent) => {
-    event.preventDefault();
   }
 }

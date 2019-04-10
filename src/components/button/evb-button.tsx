@@ -33,7 +33,7 @@ export class EvbButton implements ComponentInterface {
   /**
    * Renders the components
    */
-  render() {
+  render(): JSX.Element {
     // tslint:disable-next-line: variable-name no-any
     const TagType = this.href === undefined ? 'button' : 'a' as any;
     const attrs = (TagType === 'button') ? { type: this.type } : { href: this.href };
@@ -45,7 +45,7 @@ export class EvbButton implements ComponentInterface {
     return (
       <TagType
         {...attrs}
-        className={classes.join(' ')}
+        class={classes.join(' ')}
         disabled={this.disabled}
         onFocus={this.onFocus}
         onBlur={this.onBlur}>

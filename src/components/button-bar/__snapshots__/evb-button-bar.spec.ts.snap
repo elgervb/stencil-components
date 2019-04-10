@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`EvbButtonBar should add a justify class 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": null,
+  "vchildren": null,
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "slot",
+  "vtext": undefined,
+}
+`;
+
 exports[`EvbButtonBar should render 1`] = `
 Object {
   "elm": undefined,

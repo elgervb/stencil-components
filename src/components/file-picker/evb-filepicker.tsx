@@ -1,5 +1,7 @@
 import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Method, Prop } from '@stencil/core';
 
+import { readImage } from '../../utils/file/read-file';
+
 import { PickedFile } from './pickedfile';
 
 @Component({
@@ -54,7 +56,13 @@ export class EvbFilepicker implements ComponentInterface {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         if (this.validateMimes(file, this.accept)) {
-          this.loadImage(file);
+          readImage(file)
+            .then(dataUrl => {
+              this.pick.emit({
+                file,
+                dataUrl
+              });
+            });
         }
       }
     }
@@ -87,21 +95,6 @@ export class EvbFilepicker implements ComponentInterface {
         accept={this.accept} />,
       <slot />
     ]);
-  }
-
-  private loadImage(file: File): void {
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const dataUrl = reader.result.toString();
-
-      this.pick.emit({
-        file,
-        dataUrl
-      });
-    };
-
-    reader.readAsDataURL(file);
   }
 
   private validateMimeType(file: File, mimeType: string): boolean {
