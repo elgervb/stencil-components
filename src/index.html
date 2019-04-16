@@ -19,7 +19,8 @@
     body, button, select, input, textarea {
       font-family: futura-pt, sans-serif;
       font-style: normal;
-      font-weight: 300;
+      font-weight: 400;
+      font-size: 1em;
       line-height: 16px;
   }
     body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -44,6 +45,8 @@
       max-width: 200px;
       max-height: 200px;
     }
+
+
   </style>
   <script>
 
@@ -69,6 +72,13 @@
       filepreview.setAttribute('src', event.detail.dataUrl);
       filepreview.setAttribute('caption', event.detail.file.name);
     });
+
+    // flyout
+    const toggle = document.getElementById('toggle-flyout');
+    const flyout = document.querySelector('evb-flyout');
+    toggle.addEventListener('click', () => {
+      flyout.toggle();
+    })
   });
 
   </script>
@@ -76,7 +86,21 @@
 <body>
 
   <section class="container">
+
+    <evb-header heading="2">Flyout</evb-header>
+    <evb-button id="toggle-flyout">toggle</evb-button>
+    <evb-flyout header="Flyout header">
+      <evb-header heading="4">Flyout content</evb-header>
+    </evb-flyout>
+
     <evb-header heading="1">Evb Components</evb-header>
+
+    <evb-header heading="2">Donut</evb-header>
+    <evb-button-bar align="bottom">
+      <evb-donut progress="45" invert="false" diameter="96" thickness="12" text="true"></evb-donut>
+      <evb-donut progress="20" invert="true" diameter="48" thickness="8" text="true"></evb-donut>
+      <evb-donut progress="68" invert="false" diameter="24" thickness="4" text="true"></evb-donut>
+    </evb-button-bar>
 
     <evb-header heading="2">File upload</evb-header>
     <evb-dropzone>
