@@ -79,7 +79,6 @@ export class EvbDropzone implements ComponentInterface {
   }
 
   componentDidLoad() {
-    console.log('HOST', this.host);
     this.filePicker = this.host.shadowRoot.querySelector('evb-filepicker');
   }
 
