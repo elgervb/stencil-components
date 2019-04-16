@@ -1,0 +1,37 @@
+:host {
+  display: inline-flex;
+  position: relative;
+  font-size: 2em;
+}
+:host(.progress--with-text)::after {
+  content: attr(data-progress) '%';
+  display: block;
+  font-size: 1em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.progress {
+  height: auto;
+  position: relative;
+  transform: rotate(-90deg);
+  width: auto;
+}
+
+.progress__meter, .progress__value {
+  fill: none;
+}
+
+.progress__meter {
+  stroke: var(--evb-border-light);
+}
+
+.progress__value {
+  stroke: var(--evb-primary-color);
+}
+
+.progress__value.arc-left {
+  transform: scaleY(-1);
+  transform-origin: center;
+}
