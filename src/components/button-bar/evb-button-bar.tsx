@@ -14,11 +14,13 @@ export class EvbButtonBar implements ComponentInterface {
    * Justify the contents of the buttonbar
    */
   @Prop() justify: 'left' | 'center' | 'right';
+  @Prop() align: 'top' | 'center' | 'bottom';
 
   hostData() {
     return {
       class: {
-        [`justify-${this.justify || 'left'}`]: true
+        [`justify-${this.justify || 'left'}`]: true,
+        [`align-${this.align || 'center'}`]: true
       }
     };
   }

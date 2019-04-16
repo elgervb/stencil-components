@@ -1,5 +1,4 @@
 :host {
-  align-items: center;
   display: flex;
   margin: 1rem 0;
 }
@@ -12,6 +11,16 @@
 }
 :host(.justify-right) {
   justify-content: flex-end;
+}
+
+:host(.align-top) {
+  align-items: flex-start;
+}
+:host(.align-center) {
+  align-items: center;
+}
+:host(.align-bottom) {
+  align-items: flex-end;
 }
 
 ::slotted(evb-button) {

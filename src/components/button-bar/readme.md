@@ -9,6 +9,7 @@
 
 | Property  | Attribute | Description                           | Type                            | Default     |
 | --------- | --------- | ------------------------------------- | ------------------------------- | ----------- |
+| `align`   | `align`   |                                       | `"bottom" \| "center" \| "top"` | `undefined` |
 | `justify` | `justify` | Justify the contents of the buttonbar | `"center" \| "left" \| "right"` | `undefined` |
 
 
