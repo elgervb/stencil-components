@@ -1,6 +1,8 @@
 :root {
   --evb-primary-color: #677bd5;
   --evb-primary-color-darker: #3a4da5;
+  --evb-secondary-color: #b86322;
+  --evb-secondary-color-darker: #96490e;
   --evb-border-light: #dbdbdb;
   --evb-background-light: #dbdbdb;
 

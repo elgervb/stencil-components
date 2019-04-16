@@ -19,12 +19,14 @@ import {
 export namespace Components {
 
   interface EvbButtonBar {
+    'align': 'top' | 'center' | 'bottom';
     /**
     * Justify the contents of the buttonbar
     */
     'justify': 'left' | 'center' | 'right';
   }
   interface EvbButtonBarAttributes extends StencilHTMLAttributes {
+    'align'?: 'top' | 'center' | 'bottom';
     /**
     * Justify the contents of the buttonbar
     */
@@ -82,6 +84,21 @@ export namespace Components {
     * The type of the button, leave empty in case of a link
     */
     'type'?: 'submit' | 'button' | 'reset';
+  }
+
+  interface EvbDonut {
+    'diameter': number;
+    'invert': boolean;
+    'progress': number;
+    'text': boolean;
+    'thickness': number;
+  }
+  interface EvbDonutAttributes extends StencilHTMLAttributes {
+    'diameter'?: number;
+    'invert'?: boolean;
+    'progress'?: number;
+    'text'?: boolean;
+    'thickness'?: number;
   }
 
   interface EvbDropzone {
@@ -152,6 +169,18 @@ export namespace Components {
     'src'?: string;
   }
 
+  interface EvbFlyout {
+    'header': string;
+    'open': boolean;
+    'toggle': (forceOpen?: boolean) => void;
+  }
+  interface EvbFlyoutAttributes extends StencilHTMLAttributes {
+    'header'?: string;
+    'onClose'?: (event: CustomEvent<void>) => void;
+    'onOpen'?: (event: CustomEvent<void>) => void;
+    'open'?: boolean;
+  }
+
   interface EvbRange {
     'max': number;
     'min': number;
@@ -214,9 +243,11 @@ declare global {
   interface StencilElementInterfaces {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
+    'EvbDonut': Components.EvbDonut;
     'EvbDropzone': Components.EvbDropzone;
     'EvbFilepicker': Components.EvbFilepicker;
     'EvbFilepreview': Components.EvbFilepreview;
+    'EvbFlyout': Components.EvbFlyout;
     'EvbRange': Components.EvbRange;
     'EvbFormcontrol': Components.EvbFormcontrol;
     'EvbHeader': Components.EvbHeader;
@@ -226,9 +257,11 @@ declare global {
   interface StencilIntrinsicElements {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
+    'evb-donut': Components.EvbDonutAttributes;
     'evb-dropzone': Components.EvbDropzoneAttributes;
     'evb-filepicker': Components.EvbFilepickerAttributes;
     'evb-filepreview': Components.EvbFilepreviewAttributes;
+    'evb-flyout': Components.EvbFlyoutAttributes;
     'evb-range': Components.EvbRangeAttributes;
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
     'evb-header': Components.EvbHeaderAttributes;
@@ -248,6 +281,12 @@ declare global {
     new (): HTMLEvbButtonElement;
   };
 
+  interface HTMLEvbDonutElement extends Components.EvbDonut, HTMLStencilElement {}
+  var HTMLEvbDonutElement: {
+    prototype: HTMLEvbDonutElement;
+    new (): HTMLEvbDonutElement;
+  };
+
   interface HTMLEvbDropzoneElement extends Components.EvbDropzone, HTMLStencilElement {}
   var HTMLEvbDropzoneElement: {
     prototype: HTMLEvbDropzoneElement;
@@ -264,6 +303,12 @@ declare global {
   var HTMLEvbFilepreviewElement: {
     prototype: HTMLEvbFilepreviewElement;
     new (): HTMLEvbFilepreviewElement;
+  };
+
+  interface HTMLEvbFlyoutElement extends Components.EvbFlyout, HTMLStencilElement {}
+  var HTMLEvbFlyoutElement: {
+    prototype: HTMLEvbFlyoutElement;
+    new (): HTMLEvbFlyoutElement;
   };
 
   interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
@@ -293,9 +338,11 @@ declare global {
   interface HTMLElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
+    'evb-donut': HTMLEvbDonutElement
     'evb-dropzone': HTMLEvbDropzoneElement
     'evb-filepicker': HTMLEvbFilepickerElement
     'evb-filepreview': HTMLEvbFilepreviewElement
+    'evb-flyout': HTMLEvbFlyoutElement
     'evb-range': HTMLEvbRangeElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
     'evb-header': HTMLEvbHeaderElement
@@ -305,9 +352,11 @@ declare global {
   interface ElementTagNameMap {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
+    'evb-donut': HTMLEvbDonutElement;
     'evb-dropzone': HTMLEvbDropzoneElement;
     'evb-filepicker': HTMLEvbFilepickerElement;
     'evb-filepreview': HTMLEvbFilepreviewElement;
+    'evb-flyout': HTMLEvbFlyoutElement;
     'evb-range': HTMLEvbRangeElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;

@@ -12,17 +12,17 @@ export const config: Config = {
     },
   ],
   testing: {
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text-summary"
+    coverageReporters: [
+      'json',
+      'lcov',
+      'text-summary'
     ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 60,
-        "branches": 50,
-        "functions": 50,
-        "lines": 60
+    coverageThreshold: {
+      global: {
+        statements: 60,
+        branches: 50,
+        functions: 50,
+        lines: 60
       }
     },
   }
