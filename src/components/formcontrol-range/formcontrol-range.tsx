@@ -30,6 +30,7 @@ export class EvbRange implements ComponentInterface {
         value={this.value}
         min={this.min}
         max={this.max}
+        step={this.step}
         onBlur={() => this.evbBlur.emit()}
         onChange={() => this.evbChange.emit(this.inputValue)}
         onFocus={() => this.evbFocus.emit()}
