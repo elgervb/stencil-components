@@ -11,6 +11,7 @@ Object {
     "onChange": [Function],
     "onFocus": [Function],
     "onInput": [Function],
+    "step": undefined,
     "type": "range",
     "value": undefined,
   },
