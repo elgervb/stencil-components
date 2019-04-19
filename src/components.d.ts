@@ -181,6 +181,9 @@ export namespace Components {
     'open'?: boolean;
   }
 
+  interface EvbFormcontrol {}
+  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {}
+
   interface EvbRange {
     'max': number;
     'min': number;
@@ -198,8 +201,22 @@ export namespace Components {
     'value'?: number;
   }
 
-  interface EvbFormcontrol {}
-  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {}
+  interface EvbToggle {
+    'labeloff': string;
+    'labelon': string;
+    'type': 'default' | 'flat' | 'rotate';
+    'value': boolean;
+  }
+  interface EvbToggleAttributes extends StencilHTMLAttributes {
+    'labeloff'?: string;
+    'labelon'?: string;
+    'onEvbBlur'?: (event: CustomEvent<void>) => void;
+    'onEvbChange'?: (event: CustomEvent<boolean>) => void;
+    'onEvbFocus'?: (event: CustomEvent<void>) => void;
+    'onEvbInput'?: (event: CustomEvent<boolean>) => void;
+    'type'?: 'default' | 'flat' | 'rotate';
+    'value'?: boolean;
+  }
 
   interface EvbHeader {
     'heading': number | string;
@@ -248,8 +265,9 @@ declare global {
     'EvbFilepicker': Components.EvbFilepicker;
     'EvbFilepreview': Components.EvbFilepreview;
     'EvbFlyout': Components.EvbFlyout;
-    'EvbRange': Components.EvbRange;
     'EvbFormcontrol': Components.EvbFormcontrol;
+    'EvbRange': Components.EvbRange;
+    'EvbToggle': Components.EvbToggle;
     'EvbHeader': Components.EvbHeader;
     'EvbProgressbar': Components.EvbProgressbar;
   }
@@ -262,8 +280,9 @@ declare global {
     'evb-filepicker': Components.EvbFilepickerAttributes;
     'evb-filepreview': Components.EvbFilepreviewAttributes;
     'evb-flyout': Components.EvbFlyoutAttributes;
-    'evb-range': Components.EvbRangeAttributes;
     'evb-formcontrol': Components.EvbFormcontrolAttributes;
+    'evb-range': Components.EvbRangeAttributes;
+    'evb-toggle': Components.EvbToggleAttributes;
     'evb-header': Components.EvbHeaderAttributes;
     'evb-progressbar': Components.EvbProgressbarAttributes;
   }
@@ -311,16 +330,22 @@ declare global {
     new (): HTMLEvbFlyoutElement;
   };
 
+  interface HTMLEvbFormcontrolElement extends Components.EvbFormcontrol, HTMLStencilElement {}
+  var HTMLEvbFormcontrolElement: {
+    prototype: HTMLEvbFormcontrolElement;
+    new (): HTMLEvbFormcontrolElement;
+  };
+
   interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
   var HTMLEvbRangeElement: {
     prototype: HTMLEvbRangeElement;
     new (): HTMLEvbRangeElement;
   };
 
-  interface HTMLEvbFormcontrolElement extends Components.EvbFormcontrol, HTMLStencilElement {}
-  var HTMLEvbFormcontrolElement: {
-    prototype: HTMLEvbFormcontrolElement;
-    new (): HTMLEvbFormcontrolElement;
+  interface HTMLEvbToggleElement extends Components.EvbToggle, HTMLStencilElement {}
+  var HTMLEvbToggleElement: {
+    prototype: HTMLEvbToggleElement;
+    new (): HTMLEvbToggleElement;
   };
 
   interface HTMLEvbHeaderElement extends Components.EvbHeader, HTMLStencilElement {}
@@ -343,8 +368,9 @@ declare global {
     'evb-filepicker': HTMLEvbFilepickerElement
     'evb-filepreview': HTMLEvbFilepreviewElement
     'evb-flyout': HTMLEvbFlyoutElement
-    'evb-range': HTMLEvbRangeElement
     'evb-formcontrol': HTMLEvbFormcontrolElement
+    'evb-range': HTMLEvbRangeElement
+    'evb-toggle': HTMLEvbToggleElement
     'evb-header': HTMLEvbHeaderElement
     'evb-progressbar': HTMLEvbProgressbarElement
   }
@@ -357,8 +383,9 @@ declare global {
     'evb-filepicker': HTMLEvbFilepickerElement;
     'evb-filepreview': HTMLEvbFilepreviewElement;
     'evb-flyout': HTMLEvbFlyoutElement;
-    'evb-range': HTMLEvbRangeElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
+    'evb-range': HTMLEvbRangeElement;
+    'evb-toggle': HTMLEvbToggleElement;
     'evb-header': HTMLEvbHeaderElement;
     'evb-progressbar': HTMLEvbProgressbarElement;
   }

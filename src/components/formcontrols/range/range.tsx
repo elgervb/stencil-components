@@ -2,7 +2,7 @@ import { Component, ComponentInterface, Element, Event, EventEmitter, Prop } fro
 
 @Component({
   tag: 'evb-range',
-  styleUrl: 'formcontrol-range.css',
+  styleUrl: 'range.css',
   shadow: true
 })
 export class EvbRange implements ComponentInterface {
@@ -21,7 +21,7 @@ export class EvbRange implements ComponentInterface {
 
   get inputValue(): number {
     const input: HTMLInputElement = this.host.shadowRoot.querySelector('input[type=range]');
-    return +input.value;
+    return input.valueAsNumber;
   }
 
   render() {
