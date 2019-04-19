@@ -1,4 +1,5 @@
 :host {
+  align-items: center;
   display: flex;
   flex-direction: row;
   margin: .5rem 0;
@@ -6,8 +7,9 @@
 
 ::slotted(input), ::slotted(textarea) {
   border: 1px solid var(--evb-border-light);
+  font-size: 1em;
   line-height: normal;
-  padding: calc(.5rem - 1px);
+  padding: calc(.75rem - 1px);
   width: 100%;
 }
 

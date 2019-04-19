@@ -1,0 +1,147 @@
+
+/* ============================================================
+  COMMON
+============================================================ */
+.toggle {
+  position: absolute;
+  margin-left: -9999px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.toggle + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  padding: 2px;
+  width: 4em;
+  height: 2em;
+  transition: background .2s ease-in-out;
+}
+
+
+/* ============================================================
+  SWITCH 1 - ROUND
+============================================================ */
+input.toggle-default + label {
+  background-color: var(--evb-border-light);
+  border-radius: 2em;
+}
+
+input.toggle-default + label:before, input.toggle-default + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+
+input.toggle-default + label:before {
+  right: 1px;
+  background-color: var(--evb-border-light);
+  border-radius: 2em;
+  transition: background .2s ease-in-out;
+}
+input.toggle-default + label:after {
+  width: calc(2em + .25em);
+  background-color: var(--evb-text-color-invert);
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: margin .2s ease-in-out;
+}
+
+input.toggle-default:checked + label {
+  background-color: var(--evb-primary-color);
+}
+input.toggle-default:checked + label:before {
+  background-color: var(--evb-primary-color);
+}
+input.toggle-default:checked + label:after {
+  margin-left: calc(4em - 2em);
+}
+
+
+/* ============================================================
+  SWITCH 2 - ROUND FLAT
+============================================================ */
+input.toggle-flat + label {
+  background-color: var(--evb-border-light);
+  border-radius: 2em;
+}
+
+input.toggle-flat + label:before, input.toggle-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+input.toggle-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: var(--evb-text-color-invert);
+  border-radius: 2em;
+  transition: background .2s ease-in-out;
+}
+input.toggle-flat + label:after {
+  top: .25em;
+  left: .25em;
+  bottom: .25em;
+  height: calc(2em - .25em);
+  width: calc(2em - .25em);
+  background-color: var(--evb-border-light);
+  border-radius: 50%;
+  transition: margin .2s, background .2s ease-in-out;
+}
+
+input.toggle-flat:checked + label {
+  background-color: var(--evb-primary-color);
+}
+
+input.toggle-flat:checked + label:after {
+  margin-left: calc(4em - 2em);
+  background-color: var(--evb-primary-color);
+}
+
+
+/* ============================================================
+  SWITCH 3 - YES NO
+============================================================ */
+
+input.toggle-rotate + label:before, input.toggle-rotate + label:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: var(--evb-text-color-invert);
+    font-size: 1em;
+    text-align: center;
+    line-height: 2em;
+    padding-top: .1275em;
+  }
+  input.toggle-rotate + label:before {
+    background-color: var(--evb-border-light);
+    content: attr(data-off);
+    transition: transform .2s ease-in-out;
+    backface-visibility: hidden;
+  }
+  input.toggle-rotate + label:after {
+    background-color: var(--evb-primary-color);
+    content: attr(data-on);
+    transition: transform .2s ease-in-out;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+
+input.toggle-rotate:checked + label:before {
+  transform: rotateY(180deg);
+}
+input.toggle-rotate:checked + label:after {
+  transform: rotateY(0);
+}
