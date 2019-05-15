@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Event, EventEmitter, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-expansion-panel',
@@ -32,8 +32,9 @@ export class EvbExpansionPanel implements ComponentInterface {
 
   ngOnInit() { }
 
-  toggle() {
-    this.open = !this.open;
+  @Method()
+  toggle(force?: boolean) {
+    this.open = force !== undefined ? force : !this.open;
     this.open ? this.opened.emit() : this.closed.emit();
   }
 

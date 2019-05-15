@@ -18,6 +18,9 @@ import {
 
 export namespace Components {
 
+  interface EvbAccordion {}
+  interface EvbAccordionAttributes extends StencilHTMLAttributes {}
+
   interface EvbButtonBar {
     'align': 'top' | 'center' | 'bottom';
     /**
@@ -114,6 +117,7 @@ export namespace Components {
     * The textual title of the panel
     */
     'text': string;
+    'toggle': (force?: boolean) => void;
   }
   interface EvbExpansionPanelAttributes extends StencilHTMLAttributes {
     /**
@@ -295,6 +299,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'EvbAccordion': Components.EvbAccordion;
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
     'EvbDonut': Components.EvbDonut;
@@ -311,6 +316,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'evb-accordion': Components.EvbAccordionAttributes;
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
     'evb-donut': Components.EvbDonutAttributes;
@@ -326,6 +332,12 @@ declare global {
     'evb-progressbar': Components.EvbProgressbarAttributes;
   }
 
+
+  interface HTMLEvbAccordionElement extends Components.EvbAccordion, HTMLStencilElement {}
+  var HTMLEvbAccordionElement: {
+    prototype: HTMLEvbAccordionElement;
+    new (): HTMLEvbAccordionElement;
+  };
 
   interface HTMLEvbButtonBarElement extends Components.EvbButtonBar, HTMLStencilElement {}
   var HTMLEvbButtonBarElement: {
@@ -406,6 +418,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'evb-accordion': HTMLEvbAccordionElement
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
     'evb-donut': HTMLEvbDonutElement
@@ -422,6 +435,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'evb-accordion': HTMLEvbAccordionElement;
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
     'evb-donut': HTMLEvbDonutElement;
