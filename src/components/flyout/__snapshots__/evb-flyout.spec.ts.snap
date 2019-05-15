@@ -1,3 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EvbFlyout should create 1`] = `""`;
+
+exports[`EvbFlyout should not render host class when openend 1`] = `""`;
+
+exports[`EvbFlyout should render host class when openend 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "class": "flyout",
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": Array [
+        Object {
+          "elm": undefined,
+          "ishost": false,
+          "vattrs": Object {
+            "heading": "3",
+          },
+          "vchildren": Array [
+            Object {
+              "vtext": "",
+            },
+          ],
+          "vkey": undefined,
+          "vname": undefined,
+          "vtag": "evb-header",
+          "vtext": undefined,
+        },
+        Object {
+          "elm": undefined,
+          "ishost": false,
+          "vattrs": Object {
+            "class": "close",
+            "onClick": [Function],
+          },
+          "vchildren": Array [
+            Object {
+              "vtext": "×",
+            },
+          ],
+          "vkey": undefined,
+          "vname": undefined,
+          "vtag": "button",
+          "vtext": undefined,
+        },
+      ],
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "header",
+      "vtext": undefined,
+    },
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": null,
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "slot",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "aside",
+  "vtext": undefined,
+}
+`;

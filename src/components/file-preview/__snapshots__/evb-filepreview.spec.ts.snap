@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EvbFilePreview should render 1`] = `""`;
+exports[`EvbFilePreview should not render when image is not set 1`] = `""`;
+
+exports[`EvbFilePreview should render 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": null,
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": Object {
+        "alt": "preview",
+        "src": "/image.png",
+      },
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "img",
+      "vtext": undefined,
+    },
+    Object {
+      "vtext": "",
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "figure",
+  "vtext": undefined,
+}
+`;
