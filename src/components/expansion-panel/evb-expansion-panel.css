@@ -4,11 +4,16 @@
   margin-top: 8px;
 }
 
+.body {
+  margin: 1rem 0;
+}
+
 .title {
   font-size: 1.25em;
   cursor: pointer;
   display: block;
   outline: none;
+  padding: .5rem 0;
   user-select: none;
 }
 

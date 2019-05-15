@@ -3,7 +3,7 @@ import { Component, ComponentInterface, Event, EventEmitter, Method, Prop } from
 @Component({
   tag: 'evb-expansion-panel',
   shadow: true,
-  styleUrl: 'expansion-panel.css'
+  styleUrl: 'evb-expansion-panel.css'
 })
 export class EvbExpansionPanel implements ComponentInterface {
   /**
@@ -42,7 +42,7 @@ export class EvbExpansionPanel implements ComponentInterface {
     const classes = ['title', this.justify];
     return ([
       <div class={classes.join(' ')} onClick={() => this.toggle()}>{this.text}</div>,
-      this.open ? <slot></slot> : ''
+      this.open ? <div class='body'><slot></slot></div> : ''
     ]);
   }
 
