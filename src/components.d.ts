@@ -101,6 +101,43 @@ export namespace Components {
     'thickness'?: number;
   }
 
+  interface EvbExpansionPanel {
+    /**
+    * Where to align the title
+    */
+    'justify'?: 'left' | 'right' | 'center';
+    /**
+    * Whether the panel is open, eg: shows it's content
+    */
+    'open': boolean;
+    /**
+    * The textual title of the panel
+    */
+    'text': string;
+  }
+  interface EvbExpansionPanelAttributes extends StencilHTMLAttributes {
+    /**
+    * Where to align the title
+    */
+    'justify'?: 'left' | 'right' | 'center';
+    /**
+    * Emits when the panel is closed
+    */
+    'onClosed'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emits when the panel is opened
+    */
+    'onOpened'?: (event: CustomEvent<void>) => void;
+    /**
+    * Whether the panel is open, eg: shows it's content
+    */
+    'open'?: boolean;
+    /**
+    * The textual title of the panel
+    */
+    'text'?: string;
+  }
+
   interface EvbDropzone {
     /**
     * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
@@ -261,6 +298,7 @@ declare global {
     'EvbButtonBar': Components.EvbButtonBar;
     'EvbButton': Components.EvbButton;
     'EvbDonut': Components.EvbDonut;
+    'EvbExpansionPanel': Components.EvbExpansionPanel;
     'EvbDropzone': Components.EvbDropzone;
     'EvbFilepicker': Components.EvbFilepicker;
     'EvbFilepreview': Components.EvbFilepreview;
@@ -276,6 +314,7 @@ declare global {
     'evb-button-bar': Components.EvbButtonBarAttributes;
     'evb-button': Components.EvbButtonAttributes;
     'evb-donut': Components.EvbDonutAttributes;
+    'evb-expansion-panel': Components.EvbExpansionPanelAttributes;
     'evb-dropzone': Components.EvbDropzoneAttributes;
     'evb-filepicker': Components.EvbFilepickerAttributes;
     'evb-filepreview': Components.EvbFilepreviewAttributes;
@@ -304,6 +343,12 @@ declare global {
   var HTMLEvbDonutElement: {
     prototype: HTMLEvbDonutElement;
     new (): HTMLEvbDonutElement;
+  };
+
+  interface HTMLEvbExpansionPanelElement extends Components.EvbExpansionPanel, HTMLStencilElement {}
+  var HTMLEvbExpansionPanelElement: {
+    prototype: HTMLEvbExpansionPanelElement;
+    new (): HTMLEvbExpansionPanelElement;
   };
 
   interface HTMLEvbDropzoneElement extends Components.EvbDropzone, HTMLStencilElement {}
@@ -364,6 +409,7 @@ declare global {
     'evb-button-bar': HTMLEvbButtonBarElement
     'evb-button': HTMLEvbButtonElement
     'evb-donut': HTMLEvbDonutElement
+    'evb-expansion-panel': HTMLEvbExpansionPanelElement
     'evb-dropzone': HTMLEvbDropzoneElement
     'evb-filepicker': HTMLEvbFilepickerElement
     'evb-filepreview': HTMLEvbFilepreviewElement
@@ -379,6 +425,7 @@ declare global {
     'evb-button-bar': HTMLEvbButtonBarElement;
     'evb-button': HTMLEvbButtonElement;
     'evb-donut': HTMLEvbDonutElement;
+    'evb-expansion-panel': HTMLEvbExpansionPanelElement;
     'evb-dropzone': HTMLEvbDropzoneElement;
     'evb-filepicker': HTMLEvbFilepickerElement;
     'evb-filepreview': HTMLEvbFilepreviewElement;

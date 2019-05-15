@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EvbDonut should create 1`] = `
+Object {
+  "elm": undefined,
+  "ishost": false,
+  "vattrs": Object {
+    "class": "progress",
+    "height": 120,
+    "viewBox": "0 0 120 120",
+    "width": 120,
+  },
+  "vchildren": Array [
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": Object {
+        "class": "progress__meter",
+        "cx": 60,
+        "cy": 60,
+        "r": 54,
+        "stroke-width": 12,
+      },
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "circle",
+      "vtext": undefined,
+    },
+    Object {
+      "elm": undefined,
+      "ishost": false,
+      "vattrs": Object {
+        "class": "progress__value",
+        "cx": 60,
+        "cy": 60,
+        "r": 54,
+        "stroke-width": 12,
+        "style": Object {
+          "strokeDasharray": 339.29200658769764,
+          "strokeDashoffset": 339.29200658769764,
+        },
+      },
+      "vchildren": null,
+      "vkey": undefined,
+      "vname": undefined,
+      "vtag": "circle",
+      "vtext": undefined,
+    },
+  ],
+  "vkey": undefined,
+  "vname": undefined,
+  "vtag": "svg",
+  "vtext": undefined,
+}
+`;

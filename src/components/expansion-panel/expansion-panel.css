@@ -1,0 +1,30 @@
+
+:host {
+  display: block;
+  margin-top: 8px;
+}
+
+.title {
+  font-size: 1.25em;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  user-select: none;
+}
+
+.title.right {
+  text-align: right;
+}
+
+.title.center {
+  text-align: center;
+}
+
+.title svg {
+  display: inline-flex;
+  fill: currentColor;
+  height: 1rem;
+  margin-left: .5rem;
+  vertical-align: middle;
+  width: 1rem;
+}

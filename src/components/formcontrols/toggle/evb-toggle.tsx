@@ -3,7 +3,7 @@ import { Component, ComponentInterface, Element, Event, EventEmitter, Prop } fro
 @Component({
   tag: 'evb-toggle',
   shadow: true,
-  styleUrl: 'toggle.css'
+  styleUrl: 'evb-toggle.css'
 })
 export class EvbToggle implements ComponentInterface {
 

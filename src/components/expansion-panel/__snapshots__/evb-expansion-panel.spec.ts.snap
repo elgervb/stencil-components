@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EvbExpansionPanel should create 1`] = `
+Array [
+  Object {
+    "elm": undefined,
+    "ishost": false,
+    "vattrs": Object {
+      "class": "title left",
+      "onClick": [Function],
+    },
+    "vchildren": Array [
+      Object {
+        "vtext": "",
+      },
+    ],
+    "vkey": undefined,
+    "vname": undefined,
+    "vtag": "div",
+    "vtext": undefined,
+  },
+  "",
+]
+`;
+
+exports[`EvbExpansionPanel should render text 1`] = `
+Array [
+  Object {
+    "elm": undefined,
+    "ishost": false,
+    "vattrs": Object {
+      "class": "title left",
+      "onClick": [Function],
+    },
+    "vchildren": Array [
+      Object {
+        "vtext": "Hello world",
+      },
+    ],
+    "vkey": undefined,
+    "vname": undefined,
+    "vtag": "div",
+    "vtext": undefined,
+  },
+  Object {
+    "elm": undefined,
+    "ishost": false,
+    "vattrs": null,
+    "vchildren": null,
+    "vkey": undefined,
+    "vname": undefined,
+    "vtag": "slot",
+    "vtext": undefined,
+  },
+]
+`;
