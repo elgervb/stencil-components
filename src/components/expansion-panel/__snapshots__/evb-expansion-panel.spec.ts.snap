@@ -45,11 +45,24 @@ Array [
   Object {
     "elm": undefined,
     "ishost": false,
-    "vattrs": null,
-    "vchildren": null,
+    "vattrs": Object {
+      "class": "body",
+    },
+    "vchildren": Array [
+      Object {
+        "elm": undefined,
+        "ishost": false,
+        "vattrs": null,
+        "vchildren": null,
+        "vkey": undefined,
+        "vname": undefined,
+        "vtag": "slot",
+        "vtext": undefined,
+      },
+    ],
     "vkey": undefined,
     "vname": undefined,
-    "vtag": "slot",
+    "vtag": "div",
     "vtext": undefined,
   },
 ]
