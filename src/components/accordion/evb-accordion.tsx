@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Listen } from '@stencil/core';
+import { Component, ComponentInterface, Element, Listen, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-accordion',
@@ -6,10 +6,15 @@ import { Component, ComponentInterface, Element, Listen } from '@stencil/core';
 })
 export class EvbAccordion implements ComponentInterface {
 
+  /**
+   * When loaded, open the nth expansion panel. Count starts at 1
+   */
+  @Prop() openNth?: number;
+
   @Element()
   host: HTMLElement;
 
-  currentOpen: HTMLEvbExpansionPanelElement;
+  private currentOpen: HTMLEvbExpansionPanelElement;
 
   @Listen('closed')
   childClosed() {
@@ -25,10 +30,15 @@ export class EvbAccordion implements ComponentInterface {
   }
 
   componentDidLoad() {
-    // this.host.shadowRoot.querySelector()
-    const panel = this.host.querySelector<HTMLEvbExpansionPanelElement>('evb-expansion-panel');
-    panel.toggle();
-    console.log('asdf', this.host);
+    if (this.openNth) {
+      this.openPanel(this.openNth);
+    }
+  }
+
+  @Method()
+  openPanel(nth: number) {
+    const panel = this.host.querySelector<HTMLEvbExpansionPanelElement>(`evb-expansion-panel:nth-child(${nth})`);
+    panel.toggle(true);
   }
 
   render() {

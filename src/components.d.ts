@@ -18,8 +18,19 @@ import {
 
 export namespace Components {
 
-  interface EvbAccordion {}
-  interface EvbAccordionAttributes extends StencilHTMLAttributes {}
+  interface EvbAccordion {
+    /**
+    * When loaded, open the nth expansion panel. Count starts at 1
+    */
+    'openNth'?: number;
+    'openPanel': (nth: number) => void;
+  }
+  interface EvbAccordionAttributes extends StencilHTMLAttributes {
+    /**
+    * When loaded, open the nth expansion panel. Count starts at 1
+    */
+    'openNth'?: number;
+  }
 
   interface EvbButtonBar {
     'align': 'top' | 'center' | 'bottom';
