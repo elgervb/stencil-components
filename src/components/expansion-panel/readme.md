@@ -22,6 +22,25 @@
 | `opened` | Emits when the panel is opened | `CustomEvent<void>` |
 
 
+## Methods
+
+### `toggle(force?: boolean) => void`
+
+
+
+#### Parameters
+
+| Name    | Type      | Description |
+| ------- | --------- | ----------- |
+| `force` | `boolean` |             |
+
+#### Returns
+
+Type: `void`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
