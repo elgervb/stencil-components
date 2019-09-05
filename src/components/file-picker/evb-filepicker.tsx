@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Method, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Method, Prop, h } from '@stencil/core';
 
 import { readImage } from '../../utils/file/read-file';
 
@@ -50,7 +50,7 @@ export class EvbFilepicker implements ComponentInterface {
   }
 
   @Method()
-  handleFiles(files: FileList) {
+  async handleFiles(files: FileList) {
     if (files && files.length) {
       // tslint:disable-next-line: prefer-for-of for loop for FileList
       for (let i = 0; i < files.length; i++) {

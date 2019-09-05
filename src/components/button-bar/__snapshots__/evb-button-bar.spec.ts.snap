@@ -2,26 +2,48 @@
 
 exports[`EvbButtonBar should add a justify class 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": null,
-  "vchildren": null,
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "slot",
-  "vtext": undefined,
+  "$attrs$": Object {
+    "class": "justify-center align-center",
+  },
+  "$children$": Array [
+    Object {
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
+    },
+  ],
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
 }
 `;
 
 exports[`EvbButtonBar should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": null,
-  "vchildren": null,
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "slot",
-  "vtext": undefined,
+  "$attrs$": Object {
+    "class": "justify-left align-center",
+  },
+  "$children$": Array [
+    Object {
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
+    },
+  ],
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
 }
 `;

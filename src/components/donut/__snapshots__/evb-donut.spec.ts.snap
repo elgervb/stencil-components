@@ -2,55 +2,68 @@
 
 exports[`EvbDonut should create 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
-    "class": "progress",
-    "height": 120,
-    "viewBox": "0 0 120 120",
-    "width": 120,
-  },
-  "vchildren": Array [
-    Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": Object {
-        "class": "progress__meter",
-        "cx": 60,
-        "cy": 60,
-        "r": 54,
-        "stroke-width": 12,
-      },
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "circle",
-      "vtext": undefined,
+  "$attrs$": Object {
+    "class": "",
+    "data-progress": 0,
+    "style": Object {
+      "fontSize": "46px",
     },
+  },
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": Object {
-        "class": "progress__value",
-        "cx": 60,
-        "cy": 60,
-        "r": 54,
-        "stroke-width": 12,
-        "style": Object {
-          "strokeDasharray": 339.29200658769764,
-          "strokeDashoffset": 339.29200658769764,
-        },
+      "$attrs$": Object {
+        "class": "progress",
+        "height": 120,
+        "viewBox": "0 0 120 120",
+        "width": 120,
       },
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "circle",
-      "vtext": undefined,
+      "$children$": Array [
+        Object {
+          "$attrs$": Object {
+            "class": "progress__meter",
+            "cx": 60,
+            "cy": 60,
+            "r": 54,
+            "stroke-width": 12,
+          },
+          "$children$": null,
+          "$elm$": undefined,
+          "$flags$": 0,
+          "$key$": undefined,
+          "$name$": undefined,
+          "$tag$": "circle",
+        },
+        Object {
+          "$attrs$": Object {
+            "class": "progress__value",
+            "cx": 60,
+            "cy": 60,
+            "r": 54,
+            "stroke-width": 12,
+            "style": Object {
+              "strokeDasharray": "339.29200658769764",
+              "strokeDashoffset": "339.29200658769764",
+            },
+          },
+          "$children$": null,
+          "$elm$": undefined,
+          "$flags$": 0,
+          "$key$": undefined,
+          "$name$": undefined,
+          "$tag$": "circle",
+        },
+      ],
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "svg",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "svg",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
 }
 `;

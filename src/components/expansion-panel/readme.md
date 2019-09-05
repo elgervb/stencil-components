@@ -24,19 +24,13 @@
 
 ## Methods
 
-### `toggle(force?: boolean) => void`
+### `toggle(force?: boolean) => Promise<void>`
 
 
-
-#### Parameters
-
-| Name    | Type      | Description |
-| ------- | --------- | ----------- |
-| `force` | `boolean` |             |
 
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 

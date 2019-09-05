@@ -23,22 +23,29 @@
 
 ## Methods
 
-### `toggle(forceOpen?: boolean) => void`
+### `toggle(forceOpen?: boolean) => Promise<void>`
 
 
-
-#### Parameters
-
-| Name        | Type      | Description |
-| ----------- | --------- | ----------- |
-| `forceOpen` | `boolean` |             |
 
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Depends on
+
+- [evb-header](../header)
+
+### Graph
+```mermaid
+graph TD;
+  evb-flyout --> evb-header
+  style evb-flyout fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

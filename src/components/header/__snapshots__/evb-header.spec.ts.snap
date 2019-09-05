@@ -2,26 +2,24 @@
 
 exports[`EvbRange should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
+  "$attrs$": Object {
     "class": "header",
   },
-  "vchildren": Array [
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "slot",
-      "vtext": undefined,
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "hundefined",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "hundefined",
 }
 `;

@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Prop, State } from '@stencil/core';
+import { Component, ComponentInterface, Element, Event, EventEmitter, h, Listen, Prop, State } from '@stencil/core';
 
 import { PickedFile } from '../file-picker/pickedfile';
 
@@ -40,12 +40,12 @@ export class EvbDropzone implements ComponentInterface {
 
   private filePicker: HTMLEvbFilepickerElement;
 
-  @Listen('window:dragstart')
+  @Listen('dragstart', { target: 'window' })
   dragStart() {
     this.active = true;
   }
 
-  @Listen('window:dragend')
+  @Listen('dragstart', { target: 'window' })
   dragEnd() {
     this.active = false;
   }
@@ -95,7 +95,8 @@ export class EvbDropzone implements ComponentInterface {
     return ([
       <evb-filepicker
         onPick={event => this.dropped.emit(event.detail)}
-        accept={this.accept}></evb-filepicker>,
+        accept={this.accept}>
+      </evb-filepicker>,
       <slot />
     ]);
   }

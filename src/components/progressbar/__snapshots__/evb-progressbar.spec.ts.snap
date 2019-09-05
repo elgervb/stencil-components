@@ -2,18 +2,33 @@
 
 exports[`EvbProgressBar should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
-    "class": "progress__inner",
+  "$attrs$": Object {
+    "class": "",
+    "data-progress": 0,
     "style": Object {
-      "width": "",
+      "height": "24px",
     },
   },
-  "vchildren": null,
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "div",
-  "vtext": undefined,
+  "$children$": Array [
+    Object {
+      "$attrs$": Object {
+        "class": "progress__inner",
+        "style": Object {
+          "width": "",
+        },
+      },
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "div",
+    },
+  ],
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
 }
 `;

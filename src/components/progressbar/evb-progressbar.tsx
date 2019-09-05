@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Event, EventEmitter, Prop, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 
 const HALFWAY_THERE = 50;
 @Component({

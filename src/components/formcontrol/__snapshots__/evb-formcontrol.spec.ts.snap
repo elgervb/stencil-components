@@ -2,13 +2,12 @@
 
 exports[`EvbFormControl should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": null,
-  "vchildren": null,
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "slot",
-  "vtext": undefined,
+  "$attrs$": null,
+  "$children$": null,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "slot",
 }
 `;

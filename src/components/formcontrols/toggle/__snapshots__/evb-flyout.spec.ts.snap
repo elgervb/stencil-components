@@ -3,9 +3,7 @@
 exports[`EvbToggle should create 1`] = `
 Array [
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
+    "$attrs$": Object {
       "checked": undefined,
       "class": "toggle toggle-default",
       "id": "toggle",
@@ -15,25 +13,25 @@ Array [
       "onInput": [Function],
       "type": "checkbox",
     },
-    "vchildren": null,
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "input",
-    "vtext": undefined,
+    "$children$": null,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "input",
   },
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
+    "$attrs$": Object {
       "data-off": "Off",
       "data-on": "On",
       "for": "toggle",
     },
-    "vchildren": null,
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "label",
-    "vtext": undefined,
+    "$children$": null,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "label",
   },
 ]
 `;

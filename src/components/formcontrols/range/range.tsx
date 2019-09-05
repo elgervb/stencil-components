@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Event, EventEmitter, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-range',

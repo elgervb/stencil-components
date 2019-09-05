@@ -4,30 +4,29 @@ exports[`EvbFilePreview should not render when image is not set 1`] = `""`;
 
 exports[`EvbFilePreview should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": null,
-  "vchildren": Array [
+  "$attrs$": null,
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": Object {
+      "$attrs$": Object {
         "alt": "preview",
         "src": "/image.png",
       },
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "img",
-      "vtext": undefined,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "img",
     },
     Object {
-      "vtext": "",
+      "$flags$": 0,
+      "$text$": "",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "figure",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "figure",
 }
 `;

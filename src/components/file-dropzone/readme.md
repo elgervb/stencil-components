@@ -19,6 +19,19 @@
 | `dropped` | Fired after a file has been picked§ | `CustomEvent<PickedFile>` |
 
 
+## Dependencies
+
+### Depends on
+
+- [evb-filepicker](../file-picker)
+
+### Graph
+```mermaid
+graph TD;
+  evb-dropzone --> evb-filepicker
+  style evb-dropzone fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

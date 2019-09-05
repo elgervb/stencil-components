@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Prop } from '@stencil/core';
+import { Component, ComponentInterface, h, Prop } from '@stencil/core';
 
 const MIN_DIAMETER = 1;
 const PADDING = 4;
@@ -82,8 +82,8 @@ export class EvbDonut implements ComponentInterface {
     const progress = value / MAX_PERCENTAGE;
     const dashoffset = this.circumference * (1 - progress);
     return {
-      strokeDashoffset: dashoffset,
-      strokeDasharray: this.circumference
+      strokeDashoffset: dashoffset + '',
+      strokeDasharray: this.circumference + ''
     };
   }
 }

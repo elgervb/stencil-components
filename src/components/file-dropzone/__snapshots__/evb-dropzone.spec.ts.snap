@@ -1,29 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EvbDropzone should render 1`] = `
-Array [
-  Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
-      "accept": undefined,
-      "onPick": [Function],
-    },
-    "vchildren": null,
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "evb-filepicker",
-    "vtext": undefined,
-  },
-  Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": null,
-    "vchildren": null,
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "slot",
-    "vtext": undefined,
-  },
-]
+<evb-dropzone>
+  <mock:shadow-root>
+    <evb-filepicker>
+      <mock:shadow-root>
+        <input class="hidden" type="file">
+        <slot></slot>
+      </mock:shadow-root>
+    </evb-filepicker>
+    <slot></slot>
+  </mock:shadow-root>
+  asdf
+</evb-dropzone>
 `;

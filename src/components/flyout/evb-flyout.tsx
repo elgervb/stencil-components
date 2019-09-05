@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Event, EventEmitter, Listen, Method, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, h, Listen, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-flyout',
@@ -13,7 +13,7 @@ export class EvbFlyout implements ComponentInterface {
   @Event({ eventName: 'close' }) onClose: EventEmitter<void>;
   @Event({ eventName: 'open' }) onOpen: EventEmitter<void>;
 
-  @Listen('window:keydown')
+  @Listen('keydown', { target: 'window' })
   close(event: KeyboardEvent) {
     if (this.open && event.key === 'Escape') {
       this.toggle(false);
@@ -21,7 +21,7 @@ export class EvbFlyout implements ComponentInterface {
   }
 
   @Method()
-  toggle(forceOpen?: boolean) {
+  async toggle(forceOpen?: boolean) {
     this.open = forceOpen !== undefined ? forceOpen : !this.open;
 
     this.open ? this.onOpen.emit() : this.onClose.emit();
