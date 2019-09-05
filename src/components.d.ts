@@ -5,48 +5,19 @@
  */
 
 
-import '@stencil/core';
-
-
-import {
-  EventEmitter,
-} from '@stencil/core';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   PickedFile,
 } from './components/file-picker/pickedfile';
 
-
 export namespace Components {
-
   interface EvbAccordion {
     /**
     * When loaded, open the nth expansion panel. Count starts at 1
     */
     'openNth'?: number;
-    'openPanel': (nth: number) => void;
+    'openPanel': (nth: number) => Promise<void>;
   }
-  interface EvbAccordionAttributes extends StencilHTMLAttributes {
-    /**
-    * When loaded, open the nth expansion panel. Count starts at 1
-    */
-    'openNth'?: number;
-  }
-
-  interface EvbButtonBar {
-    'align': 'top' | 'center' | 'bottom';
-    /**
-    * Justify the contents of the buttonbar
-    */
-    'justify': 'left' | 'center' | 'right';
-  }
-  interface EvbButtonBarAttributes extends StencilHTMLAttributes {
-    'align'?: 'top' | 'center' | 'bottom';
-    /**
-    * Justify the contents of the buttonbar
-    */
-    'justify'?: 'left' | 'center' | 'right';
-  }
-
   interface EvbButton {
     /**
     * Whether or not the button is disabled
@@ -69,7 +40,213 @@ export namespace Components {
     */
     'type'?: 'submit' | 'button' | 'reset';
   }
-  interface EvbButtonAttributes extends StencilHTMLAttributes {
+  interface EvbButtonBar {
+    'align': 'top' | 'center' | 'bottom';
+    /**
+    * Justify the contents of the buttonbar
+    */
+    'justify': 'left' | 'center' | 'right';
+  }
+  interface EvbDonut {
+    'diameter': number;
+    'invert': boolean;
+    'progress': number;
+    'text': boolean;
+    'thickness': number;
+  }
+  interface EvbDropzone {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept': string;
+  }
+  interface EvbExpansionPanel {
+    /**
+    * Where to align the title
+    */
+    'justify'?: 'left' | 'right' | 'center';
+    /**
+    * Whether the panel is open, eg: shows it's content
+    */
+    'open': boolean;
+    /**
+    * The textual title of the panel
+    */
+    'text': string;
+    'toggle': (force?: boolean) => Promise<void>;
+  }
+  interface EvbFilepicker {
+    /**
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
+    */
+    'accept': string;
+    'handleFiles': (files: FileList) => Promise<void>;
+    /**
+    * Should we show the input type=file?
+    */
+    'input': boolean;
+    /**
+    * indicates that the user may choose more than one file
+    */
+    'multiple': boolean;
+  }
+  interface EvbFilepreview {
+    'alt': string;
+    'caption'?: string;
+    /**
+    * The source (data) url of the image to preview
+    */
+    'src': string;
+  }
+  interface EvbFlyout {
+    'header': string;
+    'open': boolean;
+    'toggle': (forceOpen?: boolean) => Promise<void>;
+  }
+  interface EvbFormcontrol {}
+  interface EvbHeader {
+    'heading': number | string;
+  }
+  interface EvbProgressbar {
+    /**
+    * The height of the bar in pixels
+    */
+    'height': number;
+    /**
+    * Progress percentage
+    */
+    'progress': number;
+    /**
+    * Show the progress as text in the progress bar
+    */
+    'text': boolean;
+  }
+  interface EvbRange {
+    'max': number;
+    'min': number;
+    'step': number;
+    'value': number;
+  }
+  interface EvbToggle {
+    'labeloff': string;
+    'labelon': string;
+    'type': 'default' | 'flat' | 'rotate';
+    'value': boolean;
+  }
+}
+
+declare global {
+
+
+  interface HTMLEvbAccordionElement extends Components.EvbAccordion, HTMLStencilElement {}
+  var HTMLEvbAccordionElement: {
+    prototype: HTMLEvbAccordionElement;
+    new (): HTMLEvbAccordionElement;
+  };
+
+  interface HTMLEvbButtonElement extends Components.EvbButton, HTMLStencilElement {}
+  var HTMLEvbButtonElement: {
+    prototype: HTMLEvbButtonElement;
+    new (): HTMLEvbButtonElement;
+  };
+
+  interface HTMLEvbButtonBarElement extends Components.EvbButtonBar, HTMLStencilElement {}
+  var HTMLEvbButtonBarElement: {
+    prototype: HTMLEvbButtonBarElement;
+    new (): HTMLEvbButtonBarElement;
+  };
+
+  interface HTMLEvbDonutElement extends Components.EvbDonut, HTMLStencilElement {}
+  var HTMLEvbDonutElement: {
+    prototype: HTMLEvbDonutElement;
+    new (): HTMLEvbDonutElement;
+  };
+
+  interface HTMLEvbDropzoneElement extends Components.EvbDropzone, HTMLStencilElement {}
+  var HTMLEvbDropzoneElement: {
+    prototype: HTMLEvbDropzoneElement;
+    new (): HTMLEvbDropzoneElement;
+  };
+
+  interface HTMLEvbExpansionPanelElement extends Components.EvbExpansionPanel, HTMLStencilElement {}
+  var HTMLEvbExpansionPanelElement: {
+    prototype: HTMLEvbExpansionPanelElement;
+    new (): HTMLEvbExpansionPanelElement;
+  };
+
+  interface HTMLEvbFilepickerElement extends Components.EvbFilepicker, HTMLStencilElement {}
+  var HTMLEvbFilepickerElement: {
+    prototype: HTMLEvbFilepickerElement;
+    new (): HTMLEvbFilepickerElement;
+  };
+
+  interface HTMLEvbFilepreviewElement extends Components.EvbFilepreview, HTMLStencilElement {}
+  var HTMLEvbFilepreviewElement: {
+    prototype: HTMLEvbFilepreviewElement;
+    new (): HTMLEvbFilepreviewElement;
+  };
+
+  interface HTMLEvbFlyoutElement extends Components.EvbFlyout, HTMLStencilElement {}
+  var HTMLEvbFlyoutElement: {
+    prototype: HTMLEvbFlyoutElement;
+    new (): HTMLEvbFlyoutElement;
+  };
+
+  interface HTMLEvbFormcontrolElement extends Components.EvbFormcontrol, HTMLStencilElement {}
+  var HTMLEvbFormcontrolElement: {
+    prototype: HTMLEvbFormcontrolElement;
+    new (): HTMLEvbFormcontrolElement;
+  };
+
+  interface HTMLEvbHeaderElement extends Components.EvbHeader, HTMLStencilElement {}
+  var HTMLEvbHeaderElement: {
+    prototype: HTMLEvbHeaderElement;
+    new (): HTMLEvbHeaderElement;
+  };
+
+  interface HTMLEvbProgressbarElement extends Components.EvbProgressbar, HTMLStencilElement {}
+  var HTMLEvbProgressbarElement: {
+    prototype: HTMLEvbProgressbarElement;
+    new (): HTMLEvbProgressbarElement;
+  };
+
+  interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
+  var HTMLEvbRangeElement: {
+    prototype: HTMLEvbRangeElement;
+    new (): HTMLEvbRangeElement;
+  };
+
+  interface HTMLEvbToggleElement extends Components.EvbToggle, HTMLStencilElement {}
+  var HTMLEvbToggleElement: {
+    prototype: HTMLEvbToggleElement;
+    new (): HTMLEvbToggleElement;
+  };
+  interface HTMLElementTagNameMap {
+    'evb-accordion': HTMLEvbAccordionElement;
+    'evb-button': HTMLEvbButtonElement;
+    'evb-button-bar': HTMLEvbButtonBarElement;
+    'evb-donut': HTMLEvbDonutElement;
+    'evb-dropzone': HTMLEvbDropzoneElement;
+    'evb-expansion-panel': HTMLEvbExpansionPanelElement;
+    'evb-filepicker': HTMLEvbFilepickerElement;
+    'evb-filepreview': HTMLEvbFilepreviewElement;
+    'evb-flyout': HTMLEvbFlyoutElement;
+    'evb-formcontrol': HTMLEvbFormcontrolElement;
+    'evb-header': HTMLEvbHeaderElement;
+    'evb-progressbar': HTMLEvbProgressbarElement;
+    'evb-range': HTMLEvbRangeElement;
+    'evb-toggle': HTMLEvbToggleElement;
+  }
+}
+
+declare namespace LocalJSX {
+  interface EvbAccordion extends JSXBase.HTMLAttributes<HTMLEvbAccordionElement> {
+    /**
+    * When loaded, open the nth expansion panel. Count starts at 1
+    */
+    'openNth'?: number;
+  }
+  interface EvbButton extends JSXBase.HTMLAttributes<HTMLEvbButtonElement> {
     /**
     * Whether or not the button is disabled
     */
@@ -99,38 +276,31 @@ export namespace Components {
     */
     'type'?: 'submit' | 'button' | 'reset';
   }
-
-  interface EvbDonut {
-    'diameter': number;
-    'invert': boolean;
-    'progress': number;
-    'text': boolean;
-    'thickness': number;
+  interface EvbButtonBar extends JSXBase.HTMLAttributes<HTMLEvbButtonBarElement> {
+    'align'?: 'top' | 'center' | 'bottom';
+    /**
+    * Justify the contents of the buttonbar
+    */
+    'justify'?: 'left' | 'center' | 'right';
   }
-  interface EvbDonutAttributes extends StencilHTMLAttributes {
+  interface EvbDonut extends JSXBase.HTMLAttributes<HTMLEvbDonutElement> {
     'diameter'?: number;
     'invert'?: boolean;
     'progress'?: number;
     'text'?: boolean;
     'thickness'?: number;
   }
-
-  interface EvbExpansionPanel {
+  interface EvbDropzone extends JSXBase.HTMLAttributes<HTMLEvbDropzoneElement> {
     /**
-    * Where to align the title
+    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
     */
-    'justify'?: 'left' | 'right' | 'center';
+    'accept'?: string;
     /**
-    * Whether the panel is open, eg: shows it's content
+    * Fired after a file has been picked§
     */
-    'open': boolean;
-    /**
-    * The textual title of the panel
-    */
-    'text': string;
-    'toggle': (force?: boolean) => void;
+    'onDropped'?: (event: CustomEvent<PickedFile>) => void;
   }
-  interface EvbExpansionPanelAttributes extends StencilHTMLAttributes {
+  interface EvbExpansionPanel extends JSXBase.HTMLAttributes<HTMLEvbExpansionPanelElement> {
     /**
     * Where to align the title
     */
@@ -152,40 +322,7 @@ export namespace Components {
     */
     'text'?: string;
   }
-
-  interface EvbDropzone {
-    /**
-    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
-    */
-    'accept': string;
-  }
-  interface EvbDropzoneAttributes extends StencilHTMLAttributes {
-    /**
-    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
-    */
-    'accept'?: string;
-    /**
-    * Fired after a file has been picked§
-    */
-    'onDropped'?: (event: CustomEvent<PickedFile>) => void;
-  }
-
-  interface EvbFilepicker {
-    /**
-    * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
-    */
-    'accept': string;
-    'handleFiles': (files: FileList) => void;
-    /**
-    * Should we show the input type=file?
-    */
-    'input': boolean;
-    /**
-    * indicates that the user may choose more than one file
-    */
-    'multiple': boolean;
-  }
-  interface EvbFilepickerAttributes extends StencilHTMLAttributes {
+  interface EvbFilepicker extends JSXBase.HTMLAttributes<HTMLEvbFilepickerElement> {
     /**
     * A string that defines the file types the file input should accept. This string is a comma-separated list of unique file type specifiers. To accept images, video and audio, use: accept="audio/*,video/*,image/*" otherwise provide the correct mimetype, eg: image/png for png images etc
     */
@@ -203,16 +340,7 @@ export namespace Components {
     */
     'onPick'?: (event: CustomEvent<PickedFile>) => void;
   }
-
-  interface EvbFilepreview {
-    'alt': string;
-    'caption'?: string;
-    /**
-    * The source (data) url of the image to preview
-    */
-    'src': string;
-  }
-  interface EvbFilepreviewAttributes extends StencilHTMLAttributes {
+  interface EvbFilepreview extends JSXBase.HTMLAttributes<HTMLEvbFilepreviewElement> {
     'alt'?: string;
     'caption'?: string;
     /**
@@ -220,78 +348,17 @@ export namespace Components {
     */
     'src'?: string;
   }
-
-  interface EvbFlyout {
-    'header': string;
-    'open': boolean;
-    'toggle': (forceOpen?: boolean) => void;
-  }
-  interface EvbFlyoutAttributes extends StencilHTMLAttributes {
+  interface EvbFlyout extends JSXBase.HTMLAttributes<HTMLEvbFlyoutElement> {
     'header'?: string;
     'onClose'?: (event: CustomEvent<void>) => void;
     'onOpen'?: (event: CustomEvent<void>) => void;
     'open'?: boolean;
   }
-
-  interface EvbFormcontrol {}
-  interface EvbFormcontrolAttributes extends StencilHTMLAttributes {}
-
-  interface EvbRange {
-    'max': number;
-    'min': number;
-    'step': number;
-    'value': number;
-  }
-  interface EvbRangeAttributes extends StencilHTMLAttributes {
-    'max'?: number;
-    'min'?: number;
-    'onEvbBlur'?: (event: CustomEvent<void>) => void;
-    'onEvbChange'?: (event: CustomEvent<number>) => void;
-    'onEvbFocus'?: (event: CustomEvent<void>) => void;
-    'onEvbInput'?: (event: CustomEvent<number>) => void;
-    'step'?: number;
-    'value'?: number;
-  }
-
-  interface EvbToggle {
-    'labeloff': string;
-    'labelon': string;
-    'type': 'default' | 'flat' | 'rotate';
-    'value': boolean;
-  }
-  interface EvbToggleAttributes extends StencilHTMLAttributes {
-    'labeloff'?: string;
-    'labelon'?: string;
-    'onEvbBlur'?: (event: CustomEvent<void>) => void;
-    'onEvbChange'?: (event: CustomEvent<boolean>) => void;
-    'onEvbFocus'?: (event: CustomEvent<void>) => void;
-    'onEvbInput'?: (event: CustomEvent<boolean>) => void;
-    'type'?: 'default' | 'flat' | 'rotate';
-    'value'?: boolean;
-  }
-
-  interface EvbHeader {
+  interface EvbFormcontrol extends JSXBase.HTMLAttributes<HTMLEvbFormcontrolElement> {}
+  interface EvbHeader extends JSXBase.HTMLAttributes<HTMLEvbHeaderElement> {
     'heading': number | string;
   }
-  interface EvbHeaderAttributes extends StencilHTMLAttributes {
-    'heading': number | string;
-  }
-
-  interface EvbProgressbar {
-    /**
-    * The height of the bar in pixels
-    */
-    'height': number;
-    /**
-    * Progress percentage
-    */
-    'progress': number;
-    /**
-    * Show the progress as text in the progress bar
-    */
-    'text': boolean;
-  }
-  interface EvbProgressbarAttributes extends StencilHTMLAttributes {
+  interface EvbProgressbar extends JSXBase.HTMLAttributes<HTMLEvbProgressbarElement> {
     /**
     * The height of the bar in pixels
     */
@@ -306,169 +373,52 @@ export namespace Components {
     */
     'text'?: boolean;
   }
+  interface EvbRange extends JSXBase.HTMLAttributes<HTMLEvbRangeElement> {
+    'max'?: number;
+    'min'?: number;
+    'onEvbBlur'?: (event: CustomEvent<void>) => void;
+    'onEvbChange'?: (event: CustomEvent<number>) => void;
+    'onEvbFocus'?: (event: CustomEvent<void>) => void;
+    'onEvbInput'?: (event: CustomEvent<number>) => void;
+    'step'?: number;
+    'value'?: number;
+  }
+  interface EvbToggle extends JSXBase.HTMLAttributes<HTMLEvbToggleElement> {
+    'labeloff'?: string;
+    'labelon'?: string;
+    'onEvbBlur'?: (event: CustomEvent<void>) => void;
+    'onEvbChange'?: (event: CustomEvent<boolean>) => void;
+    'onEvbFocus'?: (event: CustomEvent<void>) => void;
+    'onEvbInput'?: (event: CustomEvent<boolean>) => void;
+    'type'?: 'default' | 'flat' | 'rotate';
+    'value'?: boolean;
+  }
+
+  interface IntrinsicElements {
+    'evb-accordion': EvbAccordion;
+    'evb-button': EvbButton;
+    'evb-button-bar': EvbButtonBar;
+    'evb-donut': EvbDonut;
+    'evb-dropzone': EvbDropzone;
+    'evb-expansion-panel': EvbExpansionPanel;
+    'evb-filepicker': EvbFilepicker;
+    'evb-filepreview': EvbFilepreview;
+    'evb-flyout': EvbFlyout;
+    'evb-formcontrol': EvbFormcontrol;
+    'evb-header': EvbHeader;
+    'evb-progressbar': EvbProgressbar;
+    'evb-range': EvbRange;
+    'evb-toggle': EvbToggle;
+  }
 }
 
-declare global {
-  interface StencilElementInterfaces {
-    'EvbAccordion': Components.EvbAccordion;
-    'EvbButtonBar': Components.EvbButtonBar;
-    'EvbButton': Components.EvbButton;
-    'EvbDonut': Components.EvbDonut;
-    'EvbExpansionPanel': Components.EvbExpansionPanel;
-    'EvbDropzone': Components.EvbDropzone;
-    'EvbFilepicker': Components.EvbFilepicker;
-    'EvbFilepreview': Components.EvbFilepreview;
-    'EvbFlyout': Components.EvbFlyout;
-    'EvbFormcontrol': Components.EvbFormcontrol;
-    'EvbRange': Components.EvbRange;
-    'EvbToggle': Components.EvbToggle;
-    'EvbHeader': Components.EvbHeader;
-    'EvbProgressbar': Components.EvbProgressbar;
-  }
-
-  interface StencilIntrinsicElements {
-    'evb-accordion': Components.EvbAccordionAttributes;
-    'evb-button-bar': Components.EvbButtonBarAttributes;
-    'evb-button': Components.EvbButtonAttributes;
-    'evb-donut': Components.EvbDonutAttributes;
-    'evb-expansion-panel': Components.EvbExpansionPanelAttributes;
-    'evb-dropzone': Components.EvbDropzoneAttributes;
-    'evb-filepicker': Components.EvbFilepickerAttributes;
-    'evb-filepreview': Components.EvbFilepreviewAttributes;
-    'evb-flyout': Components.EvbFlyoutAttributes;
-    'evb-formcontrol': Components.EvbFormcontrolAttributes;
-    'evb-range': Components.EvbRangeAttributes;
-    'evb-toggle': Components.EvbToggleAttributes;
-    'evb-header': Components.EvbHeaderAttributes;
-    'evb-progressbar': Components.EvbProgressbarAttributes;
-  }
+export { LocalJSX as JSX };
 
 
-  interface HTMLEvbAccordionElement extends Components.EvbAccordion, HTMLStencilElement {}
-  var HTMLEvbAccordionElement: {
-    prototype: HTMLEvbAccordionElement;
-    new (): HTMLEvbAccordionElement;
-  };
-
-  interface HTMLEvbButtonBarElement extends Components.EvbButtonBar, HTMLStencilElement {}
-  var HTMLEvbButtonBarElement: {
-    prototype: HTMLEvbButtonBarElement;
-    new (): HTMLEvbButtonBarElement;
-  };
-
-  interface HTMLEvbButtonElement extends Components.EvbButton, HTMLStencilElement {}
-  var HTMLEvbButtonElement: {
-    prototype: HTMLEvbButtonElement;
-    new (): HTMLEvbButtonElement;
-  };
-
-  interface HTMLEvbDonutElement extends Components.EvbDonut, HTMLStencilElement {}
-  var HTMLEvbDonutElement: {
-    prototype: HTMLEvbDonutElement;
-    new (): HTMLEvbDonutElement;
-  };
-
-  interface HTMLEvbExpansionPanelElement extends Components.EvbExpansionPanel, HTMLStencilElement {}
-  var HTMLEvbExpansionPanelElement: {
-    prototype: HTMLEvbExpansionPanelElement;
-    new (): HTMLEvbExpansionPanelElement;
-  };
-
-  interface HTMLEvbDropzoneElement extends Components.EvbDropzone, HTMLStencilElement {}
-  var HTMLEvbDropzoneElement: {
-    prototype: HTMLEvbDropzoneElement;
-    new (): HTMLEvbDropzoneElement;
-  };
-
-  interface HTMLEvbFilepickerElement extends Components.EvbFilepicker, HTMLStencilElement {}
-  var HTMLEvbFilepickerElement: {
-    prototype: HTMLEvbFilepickerElement;
-    new (): HTMLEvbFilepickerElement;
-  };
-
-  interface HTMLEvbFilepreviewElement extends Components.EvbFilepreview, HTMLStencilElement {}
-  var HTMLEvbFilepreviewElement: {
-    prototype: HTMLEvbFilepreviewElement;
-    new (): HTMLEvbFilepreviewElement;
-  };
-
-  interface HTMLEvbFlyoutElement extends Components.EvbFlyout, HTMLStencilElement {}
-  var HTMLEvbFlyoutElement: {
-    prototype: HTMLEvbFlyoutElement;
-    new (): HTMLEvbFlyoutElement;
-  };
-
-  interface HTMLEvbFormcontrolElement extends Components.EvbFormcontrol, HTMLStencilElement {}
-  var HTMLEvbFormcontrolElement: {
-    prototype: HTMLEvbFormcontrolElement;
-    new (): HTMLEvbFormcontrolElement;
-  };
-
-  interface HTMLEvbRangeElement extends Components.EvbRange, HTMLStencilElement {}
-  var HTMLEvbRangeElement: {
-    prototype: HTMLEvbRangeElement;
-    new (): HTMLEvbRangeElement;
-  };
-
-  interface HTMLEvbToggleElement extends Components.EvbToggle, HTMLStencilElement {}
-  var HTMLEvbToggleElement: {
-    prototype: HTMLEvbToggleElement;
-    new (): HTMLEvbToggleElement;
-  };
-
-  interface HTMLEvbHeaderElement extends Components.EvbHeader, HTMLStencilElement {}
-  var HTMLEvbHeaderElement: {
-    prototype: HTMLEvbHeaderElement;
-    new (): HTMLEvbHeaderElement;
-  };
-
-  interface HTMLEvbProgressbarElement extends Components.EvbProgressbar, HTMLStencilElement {}
-  var HTMLEvbProgressbarElement: {
-    prototype: HTMLEvbProgressbarElement;
-    new (): HTMLEvbProgressbarElement;
-  };
-
-  interface HTMLElementTagNameMap {
-    'evb-accordion': HTMLEvbAccordionElement
-    'evb-button-bar': HTMLEvbButtonBarElement
-    'evb-button': HTMLEvbButtonElement
-    'evb-donut': HTMLEvbDonutElement
-    'evb-expansion-panel': HTMLEvbExpansionPanelElement
-    'evb-dropzone': HTMLEvbDropzoneElement
-    'evb-filepicker': HTMLEvbFilepickerElement
-    'evb-filepreview': HTMLEvbFilepreviewElement
-    'evb-flyout': HTMLEvbFlyoutElement
-    'evb-formcontrol': HTMLEvbFormcontrolElement
-    'evb-range': HTMLEvbRangeElement
-    'evb-toggle': HTMLEvbToggleElement
-    'evb-header': HTMLEvbHeaderElement
-    'evb-progressbar': HTMLEvbProgressbarElement
-  }
-
-  interface ElementTagNameMap {
-    'evb-accordion': HTMLEvbAccordionElement;
-    'evb-button-bar': HTMLEvbButtonBarElement;
-    'evb-button': HTMLEvbButtonElement;
-    'evb-donut': HTMLEvbDonutElement;
-    'evb-expansion-panel': HTMLEvbExpansionPanelElement;
-    'evb-dropzone': HTMLEvbDropzoneElement;
-    'evb-filepicker': HTMLEvbFilepickerElement;
-    'evb-filepreview': HTMLEvbFilepreviewElement;
-    'evb-flyout': HTMLEvbFlyoutElement;
-    'evb-formcontrol': HTMLEvbFormcontrolElement;
-    'evb-range': HTMLEvbRangeElement;
-    'evb-toggle': HTMLEvbToggleElement;
-    'evb-header': HTMLEvbHeaderElement;
-    'evb-progressbar': HTMLEvbProgressbarElement;
-  }
-
-
+declare module "@stencil/core" {
   export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+

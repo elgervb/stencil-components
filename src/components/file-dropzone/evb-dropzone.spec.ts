@@ -1,14 +1,23 @@
+import { newSpecPage, SpecPage } from '@stencil/core/dist/testing';
+
+import { EvbFilepicker } from '../file-picker/evb-filepicker';
+
 import { EvbDropzone } from './evb-dropzone';
 
 const mockFilepicker = {
   handleFiles: jest.fn()
 };
-
-const mockHost = {
+jest.fn<HTMLElement, void[]>(() => ({
   shadowRoot: {
-    querySelector: jest.fn(() => mockFilepicker)
-  }
-};
+    querySelector: (_: string) => { }
+  } as ShadowRoot
+} as HTMLElement
+));
+const mockHost: HTMLElement = {
+  shadowRoot: {
+    querySelector: (_: string) => mockFilepicker
+  } as ShadowRoot
+} as HTMLElement;
 
 function createMockDragEvent(hasFile = false): DragEvent {
   const files = hasFile ? [{}] : [];
@@ -24,12 +33,18 @@ function createMockDragEvent(hasFile = false): DragEvent {
 // tslint:disable: no-unbound-method
 describe('EvbDropzone', () => {
 
+  let page: SpecPage;
   let component: EvbDropzone;
 
-  beforeEach(() => component = new EvbDropzone());
+  beforeEach(async () => page = await newSpecPage({
+    components: [EvbDropzone, EvbFilepicker],
+    html: '<evb-dropzone>asdf</evb-dropzone>'
+  }));
+
+  beforeEach(() => component = page.rootInstance);
 
   it('should render', () => {
-    expect(component.render()).toMatchSnapshot();
+    expect(page.root).toMatchSnapshot();
   });
 
   it('should toggle active', () => {
@@ -48,10 +63,7 @@ describe('EvbDropzone', () => {
     expect(isHover(component)).toBeFalsy();
   });
 
-  it('should be able to drop a file', () => {
-    // @ts-ignore just ignore error about this mock...
-    component.host = mockHost;
-    component.componentDidLoad();
+  it('should cancel the drop event', () => {
 
     const mockEvent = createMockDragEvent(true);
 
@@ -59,12 +71,20 @@ describe('EvbDropzone', () => {
 
     expect(mockEvent.preventDefault).toHaveBeenCalled();
     expect(mockEvent.stopPropagation).toHaveBeenCalled();
+  });
+  it('should be able to drop a file', () => {
+    // Object.defineProperty(component, 'host', { value: mockHost });
+    jest.spyOn(component, 'host', 'get').mockReturnValue(mockHost);
+    component.componentDidLoad();
+
+    const mockEvent = createMockDragEvent(true);
+
+    component.drop(mockEvent);
 
     expect(mockFilepicker.handleFiles).toHaveBeenCalled();
   });
 
   it('should call cancel event on dragover', () => {
-    // @ts-ignore just ignore error about this mock...
     const mockEvent = createMockDragEvent();
 
     component.dragOver(mockEvent);

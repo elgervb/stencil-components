@@ -23,22 +23,29 @@
 
 ## Methods
 
-### `handleFiles(files: FileList) => void`
+### `handleFiles(files: FileList) => Promise<void>`
 
 
-
-#### Parameters
-
-| Name    | Type       | Description |
-| ------- | ---------- | ----------- |
-| `files` | `FileList` |             |
 
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Used by
+
+ - [evb-dropzone](../file-dropzone)
+
+### Graph
+```mermaid
+graph TD;
+  evb-dropzone --> evb-filepicker
+  style evb-filepicker fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

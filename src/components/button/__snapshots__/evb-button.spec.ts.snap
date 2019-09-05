@@ -2,120 +2,112 @@
 
 exports[`EvbButton should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
+  "$attrs$": Object {
     "class": "",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],
     "type": "button",
   },
-  "vchildren": Array [
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "slot",
-      "vtext": undefined,
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "button",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "button",
 }
 `;
 
 exports[`EvbButton should render as a link 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
+  "$attrs$": Object {
     "class": "",
     "disabled": false,
     "href": "/assets/nice.gif",
     "onBlur": [Function],
     "onFocus": [Function],
   },
-  "vchildren": Array [
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "slot",
-      "vtext": undefined,
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "a",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "a",
 }
 `;
 
 exports[`EvbButton should render as a reset button 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
+  "$attrs$": Object {
     "class": "",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],
     "type": "reset",
   },
-  "vchildren": Array [
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "slot",
-      "vtext": undefined,
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "button",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "button",
 }
 `;
 
 exports[`EvbButton should render with Props 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
+  "$attrs$": Object {
     "class": "ghost pill",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],
     "type": "submit",
   },
-  "vchildren": Array [
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "slot",
-      "vtext": undefined,
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "slot",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "button",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "button",
 }
 `;

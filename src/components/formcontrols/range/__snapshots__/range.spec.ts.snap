@@ -2,9 +2,7 @@
 
 exports[`EvbRange should render 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
+  "$attrs$": Object {
     "max": undefined,
     "min": undefined,
     "onBlur": [Function],
@@ -15,10 +13,11 @@ Object {
     "type": "range",
     "value": undefined,
   },
-  "vchildren": null,
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "input",
-  "vtext": undefined,
+  "$children$": null,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": "input",
 }
 `;

@@ -1,75 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EvbFlyout should create 1`] = `""`;
+exports[`EvbFlyout should create 1`] = `
+Object {
+  "$attrs$": Object {
+    "class": "",
+  },
+  "$children$": Array [
+    Object {
+      "$flags$": 0,
+      "$text$": "",
+    },
+  ],
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
+}
+`;
 
-exports[`EvbFlyout should not render host class when openend 1`] = `""`;
+exports[`EvbFlyout should not render host class when openend 1`] = `
+Object {
+  "$attrs$": Object {
+    "class": "",
+  },
+  "$children$": Array [
+    Object {
+      "$flags$": 0,
+      "$text$": "",
+    },
+  ],
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
+}
+`;
 
 exports[`EvbFlyout should render host class when openend 1`] = `
 Object {
-  "elm": undefined,
-  "ishost": false,
-  "vattrs": Object {
-    "class": "flyout",
+  "$attrs$": Object {
+    "class": "flyout--open",
   },
-  "vchildren": Array [
+  "$children$": Array [
     Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": Array [
+      "$attrs$": Object {
+        "class": "flyout",
+      },
+      "$children$": Array [
         Object {
-          "elm": undefined,
-          "ishost": false,
-          "vattrs": Object {
-            "heading": "3",
-          },
-          "vchildren": Array [
+          "$attrs$": null,
+          "$children$": Array [
             Object {
-              "vtext": "",
+              "$attrs$": Object {
+                "heading": "3",
+              },
+              "$children$": null,
+              "$elm$": undefined,
+              "$flags$": 0,
+              "$key$": undefined,
+              "$name$": undefined,
+              "$tag$": "evb-header",
+            },
+            Object {
+              "$attrs$": Object {
+                "class": "close",
+                "onClick": [Function],
+              },
+              "$children$": Array [
+                Object {
+                  "$flags$": 0,
+                  "$text$": "×",
+                },
+              ],
+              "$elm$": undefined,
+              "$flags$": 0,
+              "$key$": undefined,
+              "$name$": undefined,
+              "$tag$": "button",
             },
           ],
-          "vkey": undefined,
-          "vname": undefined,
-          "vtag": "evb-header",
-          "vtext": undefined,
+          "$elm$": undefined,
+          "$flags$": 0,
+          "$key$": undefined,
+          "$name$": undefined,
+          "$tag$": "header",
         },
         Object {
-          "elm": undefined,
-          "ishost": false,
-          "vattrs": Object {
-            "class": "close",
-            "onClick": [Function],
-          },
-          "vchildren": Array [
-            Object {
-              "vtext": "×",
-            },
-          ],
-          "vkey": undefined,
-          "vname": undefined,
-          "vtag": "button",
-          "vtext": undefined,
+          "$attrs$": null,
+          "$children$": null,
+          "$elm$": undefined,
+          "$flags$": 0,
+          "$key$": undefined,
+          "$name$": undefined,
+          "$tag$": "slot",
         },
       ],
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "header",
-      "vtext": undefined,
-    },
-    Object {
-      "elm": undefined,
-      "ishost": false,
-      "vattrs": null,
-      "vchildren": null,
-      "vkey": undefined,
-      "vname": undefined,
-      "vtag": "slot",
-      "vtext": undefined,
+      "$elm$": undefined,
+      "$flags$": 0,
+      "$key$": undefined,
+      "$name$": undefined,
+      "$tag$": "aside",
     },
   ],
-  "vkey": undefined,
-  "vname": undefined,
-  "vtag": "aside",
-  "vtext": undefined,
+  "$elm$": undefined,
+  "$flags$": 0,
+  "$key$": undefined,
+  "$name$": undefined,
+  "$tag$": Object {},
 }
 `;

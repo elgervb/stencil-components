@@ -3,30 +3,28 @@
 exports[`evb-filepicker should render 1`] = `
 Array [
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
+    "$attrs$": Object {
       "accept": undefined,
       "class": "hidden",
       "multiple": undefined,
       "onChange": [Function],
       "type": "file",
     },
-    "vchildren": null,
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "input",
-    "vtext": undefined,
+    "$children$": null,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "input",
   },
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": null,
-    "vchildren": null,
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "slot",
-    "vtext": undefined,
+    "$attrs$": null,
+    "$children$": null,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "slot",
   },
 ]
 `;

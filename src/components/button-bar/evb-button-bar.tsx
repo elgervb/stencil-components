@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Prop } from '@stencil/core';
+import { Component, ComponentInterface, h, Prop } from '@stencil/core';
 
 /**
  * Container for buttons

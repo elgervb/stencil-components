@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Listen, Method, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Element, h, Listen, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-accordion',
@@ -36,7 +36,7 @@ export class EvbAccordion implements ComponentInterface {
   }
 
   @Method()
-  openPanel(nth: number) {
+  async openPanel(nth: number) {
     const panel = this.host.querySelector<HTMLEvbExpansionPanelElement>(`evb-expansion-panel:nth-child(${nth})`);
     panel.toggle(true);
   }

@@ -14,19 +14,13 @@
 
 ## Methods
 
-### `openPanel(nth: number) => void`
+### `openPanel(nth: number) => Promise<void>`
 
 
-
-#### Parameters
-
-| Name  | Type     | Description |
-| ----- | -------- | ----------- |
-| `nth` | `number` |             |
 
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 

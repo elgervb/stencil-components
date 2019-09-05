@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Event, EventEmitter, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 /**
  * Button component with click, focus and blur support
@@ -33,7 +33,7 @@ export class EvbButton implements ComponentInterface {
   /**
    * Renders the components
    */
-  render(): JSX.Element {
+  render() {
     // tslint:disable-next-line: variable-name no-any
     const TagType = this.href === undefined ? 'button' : 'a' as any;
     const attrs = (TagType === 'button') ? { type: this.type } : { href: this.href };

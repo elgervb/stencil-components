@@ -3,21 +3,16 @@
 exports[`EvbExpansionPanel should create 1`] = `
 Array [
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
+    "$attrs$": Object {
       "class": "title left",
       "onClick": [Function],
     },
-    "vchildren": Array [
-      Object {
-        "vtext": "",
-      },
-    ],
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "div",
-    "vtext": undefined,
+    "$children$": null,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "div",
   },
   "",
 ]
@@ -26,44 +21,42 @@ Array [
 exports[`EvbExpansionPanel should render text 1`] = `
 Array [
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
+    "$attrs$": Object {
       "class": "title left",
       "onClick": [Function],
     },
-    "vchildren": Array [
+    "$children$": Array [
       Object {
-        "vtext": "Hello world",
+        "$flags$": 0,
+        "$text$": "Hello world",
       },
     ],
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "div",
-    "vtext": undefined,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "div",
   },
   Object {
-    "elm": undefined,
-    "ishost": false,
-    "vattrs": Object {
+    "$attrs$": Object {
       "class": "body",
     },
-    "vchildren": Array [
+    "$children$": Array [
       Object {
-        "elm": undefined,
-        "ishost": false,
-        "vattrs": null,
-        "vchildren": null,
-        "vkey": undefined,
-        "vname": undefined,
-        "vtag": "slot",
-        "vtext": undefined,
+        "$attrs$": null,
+        "$children$": null,
+        "$elm$": undefined,
+        "$flags$": 0,
+        "$key$": undefined,
+        "$name$": undefined,
+        "$tag$": "slot",
       },
     ],
-    "vkey": undefined,
-    "vname": undefined,
-    "vtag": "div",
-    "vtext": undefined,
+    "$elm$": undefined,
+    "$flags$": 0,
+    "$key$": undefined,
+    "$name$": undefined,
+    "$tag$": "div",
   },
 ]
 `;
