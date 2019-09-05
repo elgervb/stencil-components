@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Method, Prop, h } from '@stencil/core';
+import { Component, ComponentInterface, Element, Event, EventEmitter, h, Listen, Method, Prop } from '@stencil/core';
 
 import { readImage } from '../../utils/file/read-file';
 

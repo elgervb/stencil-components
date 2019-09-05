@@ -2,6 +2,7 @@ import { readImage } from './read-file';
 jest.useFakeTimers();
 
 interface WindowWithFileReader extends Window {
+  // tslint:disable-next-line: no-any
   FileReader: any;
 }
 

@@ -6,5 +6,6 @@ node_js:
   - "11"
 
 script:
+  - yarn lint
   - yarn test --coverage
   - yarn build

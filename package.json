@@ -11,11 +11,14 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/test/test.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader"
   ],
   "scripts": {
     "build": "stencil build --docs",
     "lint": "tslint -p ./tsconfig.json",
+    "prepare": "npm run build --prod",
+    "prepublishOnly": "npm test && npm run lint",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"

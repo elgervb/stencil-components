@@ -190,7 +190,6 @@
     "no-unnecessary-type-assertion": true,
     "no-unsafe-any": false,
     "no-unused-variable": false,
-    "no-use-before-declare": true,
     "no-unused-expression": true,
     "no-unsafe-finally": true,
     "no-var-requires": true,
