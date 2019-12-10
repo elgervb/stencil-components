@@ -14,10 +14,11 @@ Object {
     "value": undefined,
   },
   "$children$": null,
-  "$elm$": undefined,
+  "$elm$": null,
   "$flags$": 0,
-  "$key$": undefined,
-  "$name$": undefined,
+  "$key$": null,
+  "$name$": null,
   "$tag$": "input",
+  "$text$": null,
 }
 `;

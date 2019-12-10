@@ -4,10 +4,11 @@ exports[`EvbFormControl should render 1`] = `
 Object {
   "$attrs$": null,
   "$children$": null,
-  "$elm$": undefined,
+  "$elm$": null,
   "$flags$": 0,
-  "$key$": undefined,
-  "$name$": undefined,
+  "$key$": null,
+  "$name$": null,
   "$tag$": "slot",
+  "$text$": null,
 }
 `;
