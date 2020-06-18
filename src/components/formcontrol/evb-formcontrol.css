@@ -5,12 +5,12 @@
   margin: .5rem 0;
 }
 
-::slotted(input), ::slotted(textarea) {
+::slotted(input), ::slotted(textarea), ::slotted(select), ::slotted(option){
   border: 1px solid var(--evb-border-light);
+  flex: 2;
   font-size: 1em;
   line-height: normal;
-  padding: calc(.75rem - 1px);
-  width: 100%;
+  padding: calc(.5rem - 1px);
 }
 
 ::slotted(evb-range) {
@@ -24,4 +24,9 @@
 
 ::slotted(::placeholder) {
   color: var(--evb-border-light);
+}
+
+::slotted(label) {
+  max-width: 25%;
+  width: 150px;
 }
