@@ -30,4 +30,10 @@ describe('EvbButton', () => {
     expect(component.render()).toMatchSnapshot();
   });
 
+  it('should render as a link button', () => {
+    component.type = 'link';
+
+    expect(component.render()).toMatchSnapshot();
+  });
+
 });

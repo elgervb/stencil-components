@@ -3,7 +3,7 @@
 exports[`EvbButton should render 1`] = `
 Object {
   "$attrs$": Object {
-    "class": "",
+    "class": "primary",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],
@@ -33,7 +33,7 @@ Object {
 exports[`EvbButton should render as a link 1`] = `
 Object {
   "$attrs$": Object {
-    "class": "",
+    "class": "primary",
     "disabled": false,
     "href": "/assets/nice.gif",
     "onBlur": [Function],
@@ -60,10 +60,40 @@ Object {
 }
 `;
 
+exports[`EvbButton should render as a link button 1`] = `
+Object {
+  "$attrs$": Object {
+    "class": "primary link",
+    "disabled": false,
+    "onBlur": [Function],
+    "onFocus": [Function],
+    "type": "link",
+  },
+  "$children$": Array [
+    Object {
+      "$attrs$": null,
+      "$children$": null,
+      "$elm$": null,
+      "$flags$": 0,
+      "$key$": null,
+      "$name$": null,
+      "$tag$": "slot",
+      "$text$": null,
+    },
+  ],
+  "$elm$": null,
+  "$flags$": 0,
+  "$key$": null,
+  "$name$": null,
+  "$tag$": "button",
+  "$text$": null,
+}
+`;
+
 exports[`EvbButton should render as a reset button 1`] = `
 Object {
   "$attrs$": Object {
-    "class": "",
+    "class": "primary",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],
@@ -93,7 +123,7 @@ Object {
 exports[`EvbButton should render with Props 1`] = `
 Object {
   "$attrs$": Object {
-    "class": "ghost pill",
+    "class": "primary ghost pill",
     "disabled": false,
     "onBlur": [Function],
     "onFocus": [Function],

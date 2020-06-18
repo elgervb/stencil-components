@@ -39,7 +39,11 @@ export namespace Components {
     /**
     * The type of the button, leave empty in case of a link
     */
-    'type'?: 'submit' | 'button' | 'reset';
+    'type'?: 'submit' | 'button' | 'reset' | 'link';
+    /**
+    * Button variants to add additional styling
+    */
+    'variant'?: 'primary' | 'secondary' | 'danger';
   }
   interface EvbButtonBar {
     'align': 'top' | 'center' | 'bottom';
@@ -275,7 +279,11 @@ declare namespace LocalJSX {
     /**
     * The type of the button, leave empty in case of a link
     */
-    'type'?: 'submit' | 'button' | 'reset';
+    'type'?: 'submit' | 'button' | 'reset' | 'link';
+    /**
+    * Button variants to add additional styling
+    */
+    'variant'?: 'primary' | 'secondary' | 'danger';
   }
   interface EvbButtonBar {
     'align'?: 'top' | 'center' | 'bottom';
