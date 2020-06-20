@@ -1,11 +1,11 @@
 :host {
   align-items: center;
   display: flex;
-  width: 100%;
+  flex: 1 1 auto;
 }
 
 input {
-  width: 100%;
+  flex: 1 1 0%;
 }
 
 input[type=range] {

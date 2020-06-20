@@ -127,6 +127,7 @@ export namespace Components {
     'text': boolean;
   }
   interface EvbRange {
+    'disabled': boolean;
     'max': number;
     'min': number;
     'step': number;
@@ -383,6 +384,7 @@ declare namespace LocalJSX {
     'text'?: boolean;
   }
   interface EvbRange {
+    'disabled'?: boolean;
     'max'?: number;
     'min'?: number;
     'onEvbBlur'?: (event: CustomEvent<void>) => void;

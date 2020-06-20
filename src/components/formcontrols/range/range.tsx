@@ -11,6 +11,7 @@ export class EvbRange implements ComponentInterface {
   @Prop() min: number;
   @Prop() max: number;
   @Prop() step: number;
+  @Prop() disabled = false;
 
   @Event() evbBlur: EventEmitter<void>;
   @Event() evbChange: EventEmitter<number>;
@@ -28,6 +29,7 @@ export class EvbRange implements ComponentInterface {
     return (
       <input type='range'
         value={this.value}
+        disabled={this.disabled}
         min={this.min}
         max={this.max}
         step={this.step}
