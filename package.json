@@ -1,6 +1,6 @@
 {
   "name": "@elgervb/stencil-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Evb Stencil Webcomponent library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
