@@ -3,6 +3,7 @@
 exports[`EvbRange should render 1`] = `
 Object {
   "$attrs$": Object {
+    "disabled": false,
     "max": undefined,
     "min": undefined,
     "onBlur": [Function],
