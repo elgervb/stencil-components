@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h } from '@stencil/core';
+import { Component, ComponentInterface, Element, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'evb-formcontrol',
@@ -10,7 +10,14 @@ import { Component, ComponentInterface, h } from '@stencil/core';
 })
 export class EvbFormControl implements ComponentInterface {
 
+  @Element() host: HTMLElement;
+  /**
+   * renders childs (eg. label + input) on the same line
+   */
+  @Prop() vertical = false;
+
   render() {
+    this.host.classList.toggle('vertical', this.vertical);
     return (
       <slot />
     );

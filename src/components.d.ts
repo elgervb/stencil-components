@@ -108,7 +108,12 @@ export namespace Components {
     'open': boolean;
     'toggle': (forceOpen?: boolean) => Promise<void>;
   }
-  interface EvbFormcontrol {}
+  interface EvbFormcontrol {
+    /**
+    * renders childs (eg. label + input) on the same line
+    */
+    'vertical': boolean;
+  }
   interface EvbHeader {
     'heading': number | string;
   }
@@ -364,7 +369,12 @@ declare namespace LocalJSX {
     'onOpen'?: (event: CustomEvent<void>) => void;
     'open'?: boolean;
   }
-  interface EvbFormcontrol {}
+  interface EvbFormcontrol {
+    /**
+    * renders childs (eg. label + input) on the same line
+    */
+    'vertical'?: boolean;
+  }
   interface EvbHeader {
     'heading': number | string;
   }
