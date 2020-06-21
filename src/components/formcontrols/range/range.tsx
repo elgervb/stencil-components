@@ -1,11 +1,13 @@
 import { Component, ComponentInterface, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
 
+import { FormControl } from '../formcontrol';
+
 @Component({
   tag: 'evb-range',
   styleUrl: 'range.css',
   shadow: true
 })
-export class EvbRange implements ComponentInterface {
+export class EvbRange implements ComponentInterface, FormControl<number> {
 
   @Prop({ mutable: true }) value: number;
   @Prop() min: number;

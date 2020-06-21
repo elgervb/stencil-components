@@ -1,11 +1,13 @@
 import { Component, ComponentInterface, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
 
+import { FormControl } from '../formcontrol';
+
 @Component({
   tag: 'evb-toggle',
   shadow: true,
   styleUrl: 'evb-toggle.css'
 })
-export class EvbToggle implements ComponentInterface {
+export class EvbToggle implements ComponentInterface, FormControl<boolean> {
 
   @Prop() type: 'default' | 'flat' | 'rotate' = 'default';
   @Prop() labelon = 'On';
@@ -18,6 +20,8 @@ export class EvbToggle implements ComponentInterface {
   @Event() evbInput: EventEmitter<boolean>;
 
   @Element() host: HTMLElement;
+
+  disabled: boolean; // TODO: implement
 
   get inputValue(): boolean {
     const input: HTMLInputElement = this.host.shadowRoot.querySelector('input[type=checkbox]');
