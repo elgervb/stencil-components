@@ -80,6 +80,11 @@
     toggle.addEventListener('click', () => {
       flyout.toggle();
     })
+
+    // color-select
+    const select = document.querySelector('evb-colorselect');
+    select.colors = ['#f0f', '#00f', '#f6e9a4'];
+    select.color = '#00f';
   });
 
   </script>
@@ -195,6 +200,12 @@
     </evb-formcontrol>
 
     <evb-formcontrol>
+      <label>evb-colorselect</label>
+      <evb-colorselect></evb-colorselect>
+    </evb-formcontrol>
+
+    <evb-formcontrol>
+      <label>evb-toggle</label>
       <evb-toggle type="flat"></evb-toggle>
     </evb-formcontrol>
   </section>

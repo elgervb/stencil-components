@@ -52,6 +52,10 @@ export namespace Components {
     */
     'justify': 'left' | 'center' | 'right';
   }
+  interface EvbColorselect {
+    'colors': string[];
+    'value': string;
+  }
   interface EvbDonut {
     'diameter': number;
     'invert': boolean;
@@ -167,6 +171,12 @@ declare global {
     new (): HTMLEvbButtonBarElement;
   };
 
+  interface HTMLEvbColorselectElement extends Components.EvbColorselect, HTMLStencilElement {}
+  var HTMLEvbColorselectElement: {
+    prototype: HTMLEvbColorselectElement;
+    new (): HTMLEvbColorselectElement;
+  };
+
   interface HTMLEvbDonutElement extends Components.EvbDonut, HTMLStencilElement {}
   var HTMLEvbDonutElement: {
     prototype: HTMLEvbDonutElement;
@@ -236,6 +246,7 @@ declare global {
     'evb-accordion': HTMLEvbAccordionElement;
     'evb-button': HTMLEvbButtonElement;
     'evb-button-bar': HTMLEvbButtonBarElement;
+    'evb-colorselect': HTMLEvbColorselectElement;
     'evb-donut': HTMLEvbDonutElement;
     'evb-dropzone': HTMLEvbDropzoneElement;
     'evb-expansion-panel': HTMLEvbExpansionPanelElement;
@@ -297,6 +308,13 @@ declare namespace LocalJSX {
     * Justify the contents of the buttonbar
     */
     'justify'?: 'left' | 'center' | 'right';
+  }
+  interface EvbColorselect {
+    'colors'?: string[];
+    'onEvbBlur'?: (event: CustomEvent<void>) => void;
+    'onEvbChange'?: (event: CustomEvent<string>) => void;
+    'onEvbInput'?: (event: CustomEvent<string>) => void;
+    'value'?: string;
   }
   interface EvbDonut {
     'diameter'?: number;
@@ -419,6 +437,7 @@ declare namespace LocalJSX {
     'evb-accordion': EvbAccordion;
     'evb-button': EvbButton;
     'evb-button-bar': EvbButtonBar;
+    'evb-colorselect': EvbColorselect;
     'evb-donut': EvbDonut;
     'evb-dropzone': EvbDropzone;
     'evb-expansion-panel': EvbExpansionPanel;
@@ -442,6 +461,7 @@ declare module "@stencil/core" {
       'evb-accordion': LocalJSX.EvbAccordion & JSXBase.HTMLAttributes<HTMLEvbAccordionElement>;
       'evb-button': LocalJSX.EvbButton & JSXBase.HTMLAttributes<HTMLEvbButtonElement>;
       'evb-button-bar': LocalJSX.EvbButtonBar & JSXBase.HTMLAttributes<HTMLEvbButtonBarElement>;
+      'evb-colorselect': LocalJSX.EvbColorselect & JSXBase.HTMLAttributes<HTMLEvbColorselectElement>;
       'evb-donut': LocalJSX.EvbDonut & JSXBase.HTMLAttributes<HTMLEvbDonutElement>;
       'evb-dropzone': LocalJSX.EvbDropzone & JSXBase.HTMLAttributes<HTMLEvbDropzoneElement>;
       'evb-expansion-panel': LocalJSX.EvbExpansionPanel & JSXBase.HTMLAttributes<HTMLEvbExpansionPanelElement>;

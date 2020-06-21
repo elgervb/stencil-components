@@ -1,0 +1,47 @@
+:host {
+  display: inline-block;
+  padding: 1px 2px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.color {
+  background: currentColor;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(0,0,0,.5);
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  padding: .25em;
+  margin: 0 .25rem;
+  width: 1em;
+}
+
+.color.is-selected {
+  border: 1px solid #ffffff;
+  border-radius: initial;
+  outline: 1px solid currentColor;
+}
+
+button.color:hover {
+  transform: scale(1.1);
+  transition: transform .2s ease-out
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button:disabled:hover {
+  transform: none;
+}
