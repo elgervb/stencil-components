@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-::slotted(input), ::slotted(textarea), ::slotted(select), ::slotted(option){
+::slotted(input), ::slotted(textarea), ::slotted(select), ::slotted(option) {
   border: 1px solid var(--evb-border-light);
   flex: 2 1 auto;
   font-size: 1em;
@@ -19,7 +19,15 @@
   width: calc(100% - 1rem);
 }
 
-::slotted(evb-range) {
+::slotted(evb-toggle), ::slotted(evb-range), ::slotted(evb-colorselect) {
+  flex: 2 1 auto;
+  font-size: 1em;
+  line-height: normal;
+  padding: calc(.5rem - 1px);
+  width: calc(100% - 1rem);
+}
+
+::slotted(evb-range), ::slotted(evb-toggle) {
   padding: .5rem 0;
 }
 
