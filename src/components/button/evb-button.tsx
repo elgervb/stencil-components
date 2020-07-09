@@ -11,7 +11,7 @@ import { Component, ComponentInterface, Event, EventEmitter, h, Prop } from '@st
 export class EvbButton implements ComponentInterface {
 
   /** The type of the button, leave empty in case of a link */
-  @Prop() type?: 'submit' | 'button' | 'reset' | 'link' = 'button';
+  @Prop() type?: 'submit' | 'button' | 'reset' | 'link' | 'icon' = 'button';
   /** The target of the anchor tag */
   @Prop() href?: string;
   /** Invert the coloring of the button */

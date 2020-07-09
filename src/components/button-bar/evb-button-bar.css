@@ -26,6 +26,10 @@
 ::slotted(evb-button) {
   margin-left: 1rem;
 }
+:host-context(evb-list) ::slotted(evb-button) {
+    margin-left: .5rem;
+}
+
 ::slotted(evb-button:first-child) {
   margin-left: 0;
 }

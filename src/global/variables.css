@@ -13,6 +13,8 @@
 
   --evb-text-color: #000;
   --evb-text-color-invert: #fff;
+
+  --evb-hover-color: rgba(103, 123, 213, .2);
 }
 
 /*

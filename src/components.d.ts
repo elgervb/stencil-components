@@ -39,7 +39,7 @@ export namespace Components {
     /**
     * The type of the button, leave empty in case of a link
     */
-    'type'?: 'submit' | 'button' | 'reset' | 'link';
+    'type'?: 'submit' | 'button' | 'reset' | 'link' | 'icon';
     /**
     * Button variants to add additional styling
     */
@@ -121,6 +121,11 @@ export namespace Components {
   interface EvbHeader {
     'heading': number | string;
   }
+  interface EvbIcon {
+    'name': string;
+  }
+  interface EvbList {}
+  interface EvbListItem {}
   interface EvbProgressbar {
     /**
     * The height of the bar in pixels
@@ -225,6 +230,24 @@ declare global {
     new (): HTMLEvbHeaderElement;
   };
 
+  interface HTMLEvbIconElement extends Components.EvbIcon, HTMLStencilElement {}
+  var HTMLEvbIconElement: {
+    prototype: HTMLEvbIconElement;
+    new (): HTMLEvbIconElement;
+  };
+
+  interface HTMLEvbListElement extends Components.EvbList, HTMLStencilElement {}
+  var HTMLEvbListElement: {
+    prototype: HTMLEvbListElement;
+    new (): HTMLEvbListElement;
+  };
+
+  interface HTMLEvbListItemElement extends Components.EvbListItem, HTMLStencilElement {}
+  var HTMLEvbListItemElement: {
+    prototype: HTMLEvbListItemElement;
+    new (): HTMLEvbListItemElement;
+  };
+
   interface HTMLEvbProgressbarElement extends Components.EvbProgressbar, HTMLStencilElement {}
   var HTMLEvbProgressbarElement: {
     prototype: HTMLEvbProgressbarElement;
@@ -255,6 +278,9 @@ declare global {
     'evb-flyout': HTMLEvbFlyoutElement;
     'evb-formcontrol': HTMLEvbFormcontrolElement;
     'evb-header': HTMLEvbHeaderElement;
+    'evb-icon': HTMLEvbIconElement;
+    'evb-list': HTMLEvbListElement;
+    'evb-list-item': HTMLEvbListItemElement;
     'evb-progressbar': HTMLEvbProgressbarElement;
     'evb-range': HTMLEvbRangeElement;
     'evb-toggle': HTMLEvbToggleElement;
@@ -296,7 +322,7 @@ declare namespace LocalJSX {
     /**
     * The type of the button, leave empty in case of a link
     */
-    'type'?: 'submit' | 'button' | 'reset' | 'link';
+    'type'?: 'submit' | 'button' | 'reset' | 'link' | 'icon';
     /**
     * Button variants to add additional styling
     */
@@ -396,6 +422,11 @@ declare namespace LocalJSX {
   interface EvbHeader {
     'heading': number | string;
   }
+  interface EvbIcon {
+    'name'?: string;
+  }
+  interface EvbList {}
+  interface EvbListItem {}
   interface EvbProgressbar {
     /**
     * The height of the bar in pixels
@@ -446,6 +477,9 @@ declare namespace LocalJSX {
     'evb-flyout': EvbFlyout;
     'evb-formcontrol': EvbFormcontrol;
     'evb-header': EvbHeader;
+    'evb-icon': EvbIcon;
+    'evb-list': EvbList;
+    'evb-list-item': EvbListItem;
     'evb-progressbar': EvbProgressbar;
     'evb-range': EvbRange;
     'evb-toggle': EvbToggle;
@@ -470,6 +504,9 @@ declare module "@stencil/core" {
       'evb-flyout': LocalJSX.EvbFlyout & JSXBase.HTMLAttributes<HTMLEvbFlyoutElement>;
       'evb-formcontrol': LocalJSX.EvbFormcontrol & JSXBase.HTMLAttributes<HTMLEvbFormcontrolElement>;
       'evb-header': LocalJSX.EvbHeader & JSXBase.HTMLAttributes<HTMLEvbHeaderElement>;
+      'evb-icon': LocalJSX.EvbIcon & JSXBase.HTMLAttributes<HTMLEvbIconElement>;
+      'evb-list': LocalJSX.EvbList & JSXBase.HTMLAttributes<HTMLEvbListElement>;
+      'evb-list-item': LocalJSX.EvbListItem & JSXBase.HTMLAttributes<HTMLEvbListItemElement>;
       'evb-progressbar': LocalJSX.EvbProgressbar & JSXBase.HTMLAttributes<HTMLEvbProgressbarElement>;
       'evb-range': LocalJSX.EvbRange & JSXBase.HTMLAttributes<HTMLEvbRangeElement>;
       'evb-toggle': LocalJSX.EvbToggle & JSXBase.HTMLAttributes<HTMLEvbToggleElement>;

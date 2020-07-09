@@ -1,0 +1,19 @@
+:host {
+  align-items: center;
+  border-bottom: 1px solid var(--evb-secondary-color);
+  display: flex;
+  padding: .5rem 0;
+}
+
+:host(:hover) {
+  background-color: var(--evb-hover-color);
+}
+
+:host(.has-actions) {
+  cursor: pointer;
+}
+
+::slotted(evb-button-bar) {
+  flex: 1 1 auto;
+  margin: 0;
+}
