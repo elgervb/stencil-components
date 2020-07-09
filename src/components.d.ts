@@ -123,6 +123,7 @@ export namespace Components {
   }
   interface EvbIcon {
     'name': string;
+    'size': 'small' | 'medium' | 'large' | 'fit';
   }
   interface EvbList {}
   interface EvbListItem {}
@@ -424,6 +425,7 @@ declare namespace LocalJSX {
   }
   interface EvbIcon {
     'name'?: string;
+    'size'?: 'small' | 'medium' | 'large' | 'fit';
   }
   interface EvbList {}
   interface EvbListItem {}

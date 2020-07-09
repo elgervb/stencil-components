@@ -15,7 +15,7 @@
 ::slotted(evb-icon) {
   height: calc(100% - 1rem);
   width: calc(100% - 1rem);
-  padding-left: .25rem;
+  padding-top: .25rem;
   fill: currentColor;
 }
 button[type=icon] {

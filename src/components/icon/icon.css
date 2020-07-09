@@ -1,11 +1,29 @@
 :host {
-  display: flex;
-  height: 32px;
-  width: 32px;
+  display: inline-flex;
 }
 svg {
   fill: currentColor;
   height: 100%;
-  padding: 0 .5rem;
   width: 100%;
+}
+
+:host([size="small"]) {
+  height: .75rem;
+  width: .75rem;
+  margin: 0 .1875em;
+}
+:host([size="medium"]) {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 .35em;
+}
+:host([size="large"]) {
+  height: 3rem;
+  width: 3rem;
+  margin: 0 .5em;
+}
+:host([size="fit"]) {
+  height: 1em;
+  width: 1em;
+  margin: 0 .1875em;
 }

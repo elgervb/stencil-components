@@ -1,5 +1,8 @@
 import { Component, h, Prop } from '@stencil/core';
 
+/**
+ * aslkdfjaslkfjaslkfj d
+ */
 @Component({
   tag: 'evb-icon',
   styleUrl: 'icon.css',
@@ -9,6 +12,7 @@ import { Component, h, Prop } from '@stencil/core';
 export class Icon {
 
   @Prop() name: string;
+  @Prop() size: 'small' | 'medium' | 'large' | 'fit';
 
   render() {
     const href = `#${this.name}`;
