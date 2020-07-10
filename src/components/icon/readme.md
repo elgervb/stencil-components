@@ -17,9 +17,10 @@ then refer to it with
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
+| Property | Attribute | Description | Type                                      | Default     |
+| -------- | --------- | ----------- | ----------------------------------------- | ----------- |
+| `name`   | `name`    |             | `string`                                  | `undefined` |
+| `size`   | `size`    |             | `"fit" \| "large" \| "medium" \| "small"` | `undefined` |
 
 
 ----------------------------------------------
